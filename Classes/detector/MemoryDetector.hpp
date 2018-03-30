@@ -55,17 +55,17 @@ namespace MD {
         }
         
         bool isEnabled() {
-            bool enable = enable_.load(std::memory_order_acquire);
+            bool enable = enable_.load(std::memory_order_relaxed);
             return enable;
         }
         
         int64_t max_data_count() {
-            int64_t c = max_data_count_.load(std::memory_order_acquire);
+            int64_t c = max_data_count_.load(std::memory_order_relaxed);
             return c;
         }
         
         void set_max_data_count(int64_t c) {
-            max_data_count_.store(c, std::memory_order_release);
+            max_data_count_.store(c, std::memory_order_relaxed);
         }
         
         void DataOverflowNotifaction() {
@@ -92,7 +92,7 @@ namespace MD {
     private:
         
         void setEnabled(bool enable) {
-            enable_.store(enable, std::memory_order_release);
+            enable_.store(enable, std::memory_order_relaxed);
         }
         
     private:

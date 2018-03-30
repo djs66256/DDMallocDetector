@@ -1,26 +1,22 @@
 //
-//  ViewController.m
+//  MDGraphViewController.m
 //  DDMallocDetector
 //
-//  Created by hzduanjiashun on 2018/3/30.
+//  Created by daniel on 2018/3/31.
 //  Copyright © 2018年 Daniel. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "MDStatisticsView.h"
-#import "MDInspectorWindow.h"
+#import "MDGraphViewController.h"
 
-@interface ViewController ()
-
-@property (nonatomic, strong) MDStatisticsView *statView;
+@interface MDGraphViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MDGraphViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [MDInspectorWindow enable];
+    // Do any additional setup after loading the view.
     
     self.statView = [[MDStatisticsView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.statView];
@@ -42,11 +38,19 @@
     [self.statView rebuildCanvasIfNeeded];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

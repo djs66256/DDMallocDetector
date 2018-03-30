@@ -15,7 +15,7 @@
 #include "Geometry.hpp"
 #include "Drawable.hpp"
 #include "Color.h"
-#include "../Macros.h"
+#include "../base/Macros.h"
 
 namespace MD {
     class CanvasLayer;
