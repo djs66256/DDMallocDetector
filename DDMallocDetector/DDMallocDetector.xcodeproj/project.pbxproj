@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE8C5845206E6D1500D81AE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5844206E6D1500D81AE6 /* AppDelegate.m */; };
+		BE8C5848206E6D1500D81AE6 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5847206E6D1500D81AE6 /* ViewController.mm */; };
+		BE8C584B206E6D1500D81AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8C5849206E6D1500D81AE6 /* Main.storyboard */; };
+		BE8C584D206E6D1500D81AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE8C584C206E6D1500D81AE6 /* Assets.xcassets */; };
+		BE8C5850206E6D1500D81AE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8C584E206E6D1500D81AE6 /* LaunchScreen.storyboard */; };
+		BE8C5853206E6D1500D81AE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5852206E6D1500D81AE6 /* main.m */; };
+		BE8C587F206E6D4800D81AE6 /* AxisLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE8C585D206E6D4800D81AE6 /* AxisLayer.mm */; };
+		BE8C5880206E6D4800D81AE6 /* CanvasLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE8C585F206E6D4800D81AE6 /* CanvasLayer.mm */; };
+		BE8C5881206E6D4800D81AE6 /* FillLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5862206E6D4800D81AE6 /* FillLayer.cpp */; };
+		BE8C5882206E6D4800D81AE6 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5865206E6D4800D81AE6 /* Layer.cpp */; };
+		BE8C5883206E6D4800D81AE6 /* StrokeLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5867206E6D4800D81AE6 /* StrokeLayer.cpp */; };
+		BE8C5884206E6D4800D81AE6 /* MallocCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C586A206E6D4800D81AE6 /* MallocCollector.cpp */; };
+		BE8C5885206E6D4800D81AE6 /* MallocCollectorHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C586C206E6D4800D81AE6 /* MallocCollectorHelper.cpp */; };
+		BE8C5886206E6D4800D81AE6 /* MallocPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C586F206E6D4800D81AE6 /* MallocPool.cpp */; };
+		BE8C5887206E6D4800D81AE6 /* MallocWrapZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5872206E6D4800D81AE6 /* MallocWrapZone.cpp */; };
+		BE8C5888206E6D4800D81AE6 /* MemoryAnylasis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5874206E6D4800D81AE6 /* MemoryAnylasis.cpp */; };
+		BE8C5889206E6D4800D81AE6 /* MemoryDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5876206E6D4800D81AE6 /* MemoryDetector.cpp */; };
+		BE8C588A206E6D4800D81AE6 /* ThreadLocal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5878206E6D4800D81AE6 /* ThreadLocal.cpp */; };
+		BE8C588B206E6D4800D81AE6 /* MDDrawableView.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE8C587C206E6D4800D81AE6 /* MDDrawableView.mm */; };
+		BE8C588C206E6D4800D81AE6 /* MDStatisticsView.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE8C587E206E6D4800D81AE6 /* MDStatisticsView.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BE8C5840206E6D1500D81AE6 /* DDMallocDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDMallocDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE8C5843206E6D1500D81AE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BE8C5844206E6D1500D81AE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE8C5846206E6D1500D81AE6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BE8C5847206E6D1500D81AE6 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		BE8C584A206E6D1500D81AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE8C584C206E6D1500D81AE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE8C584F206E6D1500D81AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE8C5851206E6D1500D81AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE8C5852206E6D1500D81AE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE8C585A206E6D4800D81AE6 /* Allocator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Allocator.hpp; sourceTree = "<group>"; };
+		BE8C585C206E6D4800D81AE6 /* AxisLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AxisLayer.hpp; sourceTree = "<group>"; };
+		BE8C585D206E6D4800D81AE6 /* AxisLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AxisLayer.mm; sourceTree = "<group>"; };
+		BE8C585E206E6D4800D81AE6 /* CanvasLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasLayer.h; sourceTree = "<group>"; };
+		BE8C585F206E6D4800D81AE6 /* CanvasLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CanvasLayer.mm; sourceTree = "<group>"; };
+		BE8C5860206E6D4800D81AE6 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		BE8C5861206E6D4800D81AE6 /* Drawable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Drawable.hpp; sourceTree = "<group>"; };
+		BE8C5862206E6D4800D81AE6 /* FillLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FillLayer.cpp; sourceTree = "<group>"; };
+		BE8C5863206E6D4800D81AE6 /* FillLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FillLayer.hpp; sourceTree = "<group>"; };
+		BE8C5864206E6D4800D81AE6 /* Geometry.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Geometry.hpp; sourceTree = "<group>"; };
+		BE8C5865206E6D4800D81AE6 /* Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Layer.cpp; sourceTree = "<group>"; };
+		BE8C5866206E6D4800D81AE6 /* Layer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer.hpp; sourceTree = "<group>"; };
+		BE8C5867206E6D4800D81AE6 /* StrokeLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StrokeLayer.cpp; sourceTree = "<group>"; };
+		BE8C5868206E6D4800D81AE6 /* StrokeLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StrokeLayer.hpp; sourceTree = "<group>"; };
+		BE8C5869206E6D4800D81AE6 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		BE8C586A206E6D4800D81AE6 /* MallocCollector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MallocCollector.cpp; sourceTree = "<group>"; };
+		BE8C586B206E6D4800D81AE6 /* MallocCollector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MallocCollector.hpp; sourceTree = "<group>"; };
+		BE8C586C206E6D4800D81AE6 /* MallocCollectorHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MallocCollectorHelper.cpp; sourceTree = "<group>"; };
+		BE8C586D206E6D4800D81AE6 /* MallocCollectorHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MallocCollectorHelper.hpp; sourceTree = "<group>"; };
+		BE8C586E206E6D4800D81AE6 /* MallocMemory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MallocMemory.hpp; sourceTree = "<group>"; };
+		BE8C586F206E6D4800D81AE6 /* MallocPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MallocPool.cpp; sourceTree = "<group>"; };
+		BE8C5870206E6D4800D81AE6 /* MallocPool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MallocPool.hpp; sourceTree = "<group>"; };
+		BE8C5871206E6D4800D81AE6 /* MallocStorage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MallocStorage.hpp; sourceTree = "<group>"; };
+		BE8C5872206E6D4800D81AE6 /* MallocWrapZone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MallocWrapZone.cpp; sourceTree = "<group>"; };
+		BE8C5873206E6D4800D81AE6 /* MallocWrapZone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MallocWrapZone.hpp; sourceTree = "<group>"; };
+		BE8C5874206E6D4800D81AE6 /* MemoryAnylasis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MemoryAnylasis.cpp; sourceTree = "<group>"; };
+		BE8C5875206E6D4800D81AE6 /* MemoryAnylasis.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MemoryAnylasis.hpp; sourceTree = "<group>"; };
+		BE8C5876206E6D4800D81AE6 /* MemoryDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MemoryDetector.cpp; sourceTree = "<group>"; };
+		BE8C5877206E6D4800D81AE6 /* MemoryDetector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MemoryDetector.hpp; sourceTree = "<group>"; };
+		BE8C5878206E6D4800D81AE6 /* ThreadLocal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadLocal.cpp; sourceTree = "<group>"; };
+		BE8C5879206E6D4800D81AE6 /* ThreadLocal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadLocal.hpp; sourceTree = "<group>"; };
+		BE8C587B206E6D4800D81AE6 /* MDDrawableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDrawableView.h; sourceTree = "<group>"; };
+		BE8C587C206E6D4800D81AE6 /* MDDrawableView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDDrawableView.mm; sourceTree = "<group>"; };
+		BE8C587D206E6D4800D81AE6 /* MDStatisticsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDStatisticsView.h; sourceTree = "<group>"; };
+		BE8C587E206E6D4800D81AE6 /* MDStatisticsView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDStatisticsView.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE8C583D206E6D1500D81AE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE8C5837206E6D1500D81AE6 = {
+			isa = PBXGroup;
+			children = (
+				BE8C5859206E6D4800D81AE6 /* Classes */,
+				BE8C5842206E6D1500D81AE6 /* DDMallocDetector */,
+				BE8C5841206E6D1500D81AE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE8C5841206E6D1500D81AE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE8C5840206E6D1500D81AE6 /* DDMallocDetector.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE8C5842206E6D1500D81AE6 /* DDMallocDetector */ = {
+			isa = PBXGroup;
+			children = (
+				BE8C5843206E6D1500D81AE6 /* AppDelegate.h */,
+				BE8C5844206E6D1500D81AE6 /* AppDelegate.m */,
+				BE8C5846206E6D1500D81AE6 /* ViewController.h */,
+				BE8C5847206E6D1500D81AE6 /* ViewController.mm */,
+				BE8C5849206E6D1500D81AE6 /* Main.storyboard */,
+				BE8C584C206E6D1500D81AE6 /* Assets.xcassets */,
+				BE8C584E206E6D1500D81AE6 /* LaunchScreen.storyboard */,
+				BE8C5851206E6D1500D81AE6 /* Info.plist */,
+				BE8C5852206E6D1500D81AE6 /* main.m */,
+			);
+			path = DDMallocDetector;
+			sourceTree = "<group>";
+		};
+		BE8C5859206E6D4800D81AE6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BE8C585A206E6D4800D81AE6 /* Allocator.hpp */,
+				BE8C585B206E6D4800D81AE6 /* drawable */,
+				BE8C5869206E6D4800D81AE6 /* Macros.h */,
+				BE8C586A206E6D4800D81AE6 /* MallocCollector.cpp */,
+				BE8C586B206E6D4800D81AE6 /* MallocCollector.hpp */,
+				BE8C586C206E6D4800D81AE6 /* MallocCollectorHelper.cpp */,
+				BE8C586D206E6D4800D81AE6 /* MallocCollectorHelper.hpp */,
+				BE8C586E206E6D4800D81AE6 /* MallocMemory.hpp */,
+				BE8C586F206E6D4800D81AE6 /* MallocPool.cpp */,
+				BE8C5870206E6D4800D81AE6 /* MallocPool.hpp */,
+				BE8C5871206E6D4800D81AE6 /* MallocStorage.hpp */,
+				BE8C5872206E6D4800D81AE6 /* MallocWrapZone.cpp */,
+				BE8C5873206E6D4800D81AE6 /* MallocWrapZone.hpp */,
+				BE8C5874206E6D4800D81AE6 /* MemoryAnylasis.cpp */,
+				BE8C5875206E6D4800D81AE6 /* MemoryAnylasis.hpp */,
+				BE8C5876206E6D4800D81AE6 /* MemoryDetector.cpp */,
+				BE8C5877206E6D4800D81AE6 /* MemoryDetector.hpp */,
+				BE8C5878206E6D4800D81AE6 /* ThreadLocal.cpp */,
+				BE8C5879206E6D4800D81AE6 /* ThreadLocal.hpp */,
+				BE8C587A206E6D4800D81AE6 /* views */,
+			);
+			name = Classes;
+			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		BE8C585B206E6D4800D81AE6 /* drawable */ = {
+			isa = PBXGroup;
+			children = (
+				BE8C585C206E6D4800D81AE6 /* AxisLayer.hpp */,
+				BE8C585D206E6D4800D81AE6 /* AxisLayer.mm */,
+				BE8C585E206E6D4800D81AE6 /* CanvasLayer.h */,
+				BE8C585F206E6D4800D81AE6 /* CanvasLayer.mm */,
+				BE8C5860206E6D4800D81AE6 /* Color.h */,
+				BE8C5861206E6D4800D81AE6 /* Drawable.hpp */,
+				BE8C5862206E6D4800D81AE6 /* FillLayer.cpp */,
+				BE8C5863206E6D4800D81AE6 /* FillLayer.hpp */,
+				BE8C5864206E6D4800D81AE6 /* Geometry.hpp */,
+				BE8C5865206E6D4800D81AE6 /* Layer.cpp */,
+				BE8C5866206E6D4800D81AE6 /* Layer.hpp */,
+				BE8C5867206E6D4800D81AE6 /* StrokeLayer.cpp */,
+				BE8C5868206E6D4800D81AE6 /* StrokeLayer.hpp */,
+			);
+			path = drawable;
+			sourceTree = "<group>";
+		};
+		BE8C587A206E6D4800D81AE6 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BE8C587B206E6D4800D81AE6 /* MDDrawableView.h */,
+				BE8C587C206E6D4800D81AE6 /* MDDrawableView.mm */,
+				BE8C587D206E6D4800D81AE6 /* MDStatisticsView.h */,
+				BE8C587E206E6D4800D81AE6 /* MDStatisticsView.mm */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE8C583F206E6D1500D81AE6 /* DDMallocDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE8C5856206E6D1500D81AE6 /* Build configuration list for PBXNativeTarget "DDMallocDetector" */;
+			buildPhases = (
+				BE8C583C206E6D1500D81AE6 /* Sources */,
+				BE8C583D206E6D1500D81AE6 /* Frameworks */,
+				BE8C583E206E6D1500D81AE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DDMallocDetector;
+			productName = DDMallocDetector;
+			productReference = BE8C5840206E6D1500D81AE6 /* DDMallocDetector.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE8C5838206E6D1500D81AE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Daniel;
+				TargetAttributes = {
+					BE8C583F206E6D1500D81AE6 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BE8C583B206E6D1500D81AE6 /* Build configuration list for PBXProject "DDMallocDetector" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE8C5837206E6D1500D81AE6;
+			productRefGroup = BE8C5841206E6D1500D81AE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE8C583F206E6D1500D81AE6 /* DDMallocDetector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE8C583E206E6D1500D81AE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE8C5850206E6D1500D81AE6 /* LaunchScreen.storyboard in Resources */,
+				BE8C584D206E6D1500D81AE6 /* Assets.xcassets in Resources */,
+				BE8C584B206E6D1500D81AE6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE8C583C206E6D1500D81AE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE8C5888206E6D4800D81AE6 /* MemoryAnylasis.cpp in Sources */,
+				BE8C5880206E6D4800D81AE6 /* CanvasLayer.mm in Sources */,
+				BE8C5848206E6D1500D81AE6 /* ViewController.mm in Sources */,
+				BE8C5881206E6D4800D81AE6 /* FillLayer.cpp in Sources */,
+				BE8C588C206E6D4800D81AE6 /* MDStatisticsView.mm in Sources */,
+				BE8C588A206E6D4800D81AE6 /* ThreadLocal.cpp in Sources */,
+				BE8C5853206E6D1500D81AE6 /* main.m in Sources */,
+				BE8C587F206E6D4800D81AE6 /* AxisLayer.mm in Sources */,
+				BE8C588B206E6D4800D81AE6 /* MDDrawableView.mm in Sources */,
+				BE8C5885206E6D4800D81AE6 /* MallocCollectorHelper.cpp in Sources */,
+				BE8C5883206E6D4800D81AE6 /* StrokeLayer.cpp in Sources */,
+				BE8C5889206E6D4800D81AE6 /* MemoryDetector.cpp in Sources */,
+				BE8C5886206E6D4800D81AE6 /* MallocPool.cpp in Sources */,
+				BE8C5884206E6D4800D81AE6 /* MallocCollector.cpp in Sources */,
+				BE8C5887206E6D4800D81AE6 /* MallocWrapZone.cpp in Sources */,
+				BE8C5882206E6D4800D81AE6 /* Layer.cpp in Sources */,
+				BE8C5845206E6D1500D81AE6 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BE8C5849206E6D1500D81AE6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE8C584A206E6D1500D81AE6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE8C584E206E6D1500D81AE6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE8C584F206E6D1500D81AE6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE8C5854206E6D1500D81AE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BE8C5855206E6D1500D81AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE8C5857206E6D1500D81AE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DDMallocDetector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.DDMallocDetector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE8C5858206E6D1500D81AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DDMallocDetector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.DDMallocDetector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE8C583B206E6D1500D81AE6 /* Build configuration list for PBXProject "DDMallocDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE8C5854206E6D1500D81AE6 /* Debug */,
+				BE8C5855206E6D1500D81AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE8C5856206E6D1500D81AE6 /* Build configuration list for PBXNativeTarget "DDMallocDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE8C5857206E6D1500D81AE6 /* Debug */,
+				BE8C5858206E6D1500D81AE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE8C5838206E6D1500D81AE6 /* Project object */;
+}
