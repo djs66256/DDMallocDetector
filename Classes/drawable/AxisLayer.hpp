@@ -85,6 +85,10 @@ namespace MD {
                 return Iterator(0, 0);
             }
             
+            bool hasValue() const {
+                return count_ > 0;
+            }
+            
             typedef std::function<std::string&& (Float)> formatter_type;
             void setFormatter(formatter_type f) { formatter_ = f; }
             const formatter_type& formatter() const { return formatter_; }
@@ -92,8 +96,8 @@ namespace MD {
             friend class Iterator;
         private:
             Float delta_ = 1;
-            Float min_;
-            Float max_;
+            Float min_ = 0;
+            Float max_ = 0;
             int max_count_ = 5;
             int count_ = 0;
             Float real_delta_ = 0;

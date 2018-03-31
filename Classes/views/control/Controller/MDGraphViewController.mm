@@ -7,6 +7,7 @@
 //
 
 #import "MDGraphViewController.h"
+#import "../../../analysis/AnalysisPerThread.hpp"
 
 @interface MDGraphViewController ()
 
@@ -18,24 +19,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.statView = [[MDStatisticsView alloc] initWithFrame:self.view.bounds];
+    self.statView = [[MDPerThreadView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.statView];
     
-    auto line = std::make_shared<MD::View::Line>();
-    line->push_back(2);
-    line->push_back(3);
-    line->push_back(6);
-    line->push_back(4);
-    line->push_back(9);
-    line->push_back(6);
-    line->push_back(1);
-    line->push_back(3);
+//    auto line = std::make_shared<MD::View::Line>();
+//    line->push_back(2);
+//    line->push_back(3);
+//    line->push_back(6);
+//    line->push_back(4);
+//    line->push_back(9);
+//    line->push_back(6);
+//    line->push_back(1);
+//    line->push_back(3);
+//
+//    auto lines = std::make_shared<MD::View::Lines>();
+//    lines->emplace_back(line);
+//
+//    [self.statView setLines:lines];
+//    [self.statView rebuildCanvasIfNeeded];
     
-    auto lines = std::make_shared<MD::View::Lines>();
-    lines->emplace_back(line);
-    
-    [self.statView setLines:lines];
-    [self.statView rebuildCanvasIfNeeded];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        MD::AnalysisPerThread a;
+        a.Start();
+        auto data = a.data();
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.statView setPerThreadData:data->thread_memory()[0]];
+            [self.statView rebuildCanvasIfNeeded];
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning {

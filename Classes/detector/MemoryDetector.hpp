@@ -22,6 +22,12 @@ namespace MD {
         public:
             virtual void OnDataOverflow() = 0;
         };
+        class ProtectException : public std::exception {
+        public:
+            const char* what() const noexcept override {
+                return "Detector is running in protect mode now!";
+            }
+        };
         
         static MemoryDetector *GetInstance();
         
@@ -30,42 +36,46 @@ namespace MD {
         MemoryDetector() : max_data_count_(MAX_DATA_COUNT) {}
         
         // Editting malloc_zones is not thread safe, must done at program start!
-        void DetectorAllZones();
-        void DetectorDefaultZone();
+        void DetectorAllZones() noexcept;
+        void DetectorDefaultZone() noexcept;
         
         void Start() { setEnabled(true); }
         void Stop() { setEnabled(false); }
         bool Running() { return isEnabled(); }
         
-        MallocPool& pool() {
+        MallocPool& pool() noexcept {
             return pool_;
         }
         
-        MallocWrapZones& wrap_zones() {
+        MallocWrapZones& wrap_zones() noexcept {
             return wrap_zones_;
         }
         
         void ClearPool() {
-            if (isEnabled()) {
+            if (!Running()) {
                 pool_.ClearAll();
             }
             else {
-                throw std::exception();
+                throw ProtectException();
             }
         }
         
-        bool isEnabled() {
+        bool isEnabled() noexcept {
             bool enable = enable_.load(std::memory_order_relaxed);
             return enable;
         }
         
-        int64_t max_data_count() {
-            int64_t c = max_data_count_.load(std::memory_order_relaxed);
-            return c;
+        int64_t max_data_count() noexcept {
+            return max_data_count_;
         }
         
         void set_max_data_count(int64_t c) {
-            max_data_count_.store(c, std::memory_order_relaxed);
+            if (!Running()) {
+                max_data_count_ = c;
+            }
+            else {
+                throw ProtectException();
+            }
         }
         
         void DataOverflowNotifaction() {
@@ -97,7 +107,7 @@ namespace MD {
         
     private:
         std::atomic<bool> enable_;
-        std::atomic<int64_t> max_data_count_;
+        int64_t max_data_count_;
         std::mutex lock_;
         MallocPool pool_;
         MallocWrapZones wrap_zones_;

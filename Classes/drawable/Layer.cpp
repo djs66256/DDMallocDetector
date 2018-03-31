@@ -13,7 +13,14 @@
 namespace MD {
     
     void Layer::AddLayer(std::shared_ptr<Layer> layer) noexcept {
+        if (layer->superLayer()) {
+            layer->superLayer()->RemoveLayer(layer);
+        }
         layer->super_layer_ = this;
+        auto i = std::find(sub_layers_.begin(), sub_layers_.end(), layer);
+        if (i != sub_layers_.end()) {
+            sub_layers_.erase(i);
+        }
         sub_layers_.emplace_back(layer);
     }
     

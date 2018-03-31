@@ -7,3 +7,7 @@
 //
 
 #include "StrokeLayer.hpp"
+
+namespace MD {
+    
+}

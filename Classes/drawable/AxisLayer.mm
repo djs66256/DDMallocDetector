@@ -30,29 +30,31 @@ namespace MD {
         CGContextSetStrokeColor(ctx, color());
         CGContextStrokePath(ctx);
         
-        // stroke anchor
-        std::for_each(anchors().begin(), anchors().end(), [&](auto& i) {
-            Float x = r.left() + i / (anchors().count() - 1) * r.width();
-            CGContextMoveToPoint(ctx, x, r.bottom());
-            CGContextAddLineToPoint(ctx, x, r.bottom() + 3);
-            CGContextStrokePath(ctx);
-            
-            NSString *text = nullptr;
-            if (anchors().formatter()) {
-                const char *str = anchors().formatter()(i).c_str();
-                if (str) {
-                    text = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
+        if (getAnchors()->hasValue()) {
+            // stroke anchor
+            std::for_each(anchors().begin(), anchors().end(), [&](auto& i) {
+                Float x = r.left() + i / (anchors().count() - 1) * r.width();
+                CGContextMoveToPoint(ctx, x, r.bottom());
+                CGContextAddLineToPoint(ctx, x, r.bottom() + 3);
+                CGContextStrokePath(ctx);
+                
+                NSString *text = nullptr;
+                if (anchors().formatter()) {
+                    const char *str = anchors().formatter()(i).c_str();
+                    if (str) {
+                        text = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
+                    }
+                    else {
+                        text = @"";
+                    }
                 }
                 else {
-                    text = @"";
+                    text = [NSString stringWithFormat:@"%d", (int)i];
                 }
-            }
-            else {
-                text = [NSString stringWithFormat:@"%d", (int)i];
-            }
-            [text drawAtPoint:CGPointMake(x - 10, r.bottom() + 5)
-               withAttributes:@{ NSForegroundColorAttributeName: UIColorFrom(textColor()) }];
-        });
+                [text drawAtPoint:CGPointMake(x - 10, r.bottom() + 5)
+                   withAttributes:@{ NSForegroundColorAttributeName: UIColorFrom(textColor()) }];
+            });
+        }
         
         // stroke triangle
         CGContextMoveToPoint(ctx, r.right() + triangleHeight(), r.bottom());

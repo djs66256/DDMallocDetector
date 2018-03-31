@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "MemoryDetector.hpp"
 
 int main(int argc, char * argv[]) {
+    MD::MemoryDetector::GetInstance()->DetectorAllZones();
+    MD::MemoryDetector::GetInstance()->Start();
+    
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

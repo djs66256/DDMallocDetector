@@ -25,14 +25,14 @@ namespace MD {
     }
     
     
-    void MemoryDetector::DetectorAllZones() {
+    void MemoryDetector::DetectorAllZones() noexcept {
         for (int i = 0; i < malloc_num_zones; i++) {
             malloc_zone_t *z = malloc_zones[i];
             wrap_zones().WrapZone(z);
         }
     }
     
-    void MemoryDetector::DetectorDefaultZone() {
+    void MemoryDetector::DetectorDefaultZone() noexcept {
         malloc_zone_t *z = malloc_zones[0];
         wrap_zones().WrapZone(z);
     }

@@ -52,6 +52,9 @@ namespace MD {
             store_.emplace_back(item);
             return store_.size();
         }
+        const std::vector<_Tp, _Allocator>& data() const {
+            return store_;
+        }
         
         void setName(std::string&& name) { name_ = name; }
         std::string& name() { return name_; }

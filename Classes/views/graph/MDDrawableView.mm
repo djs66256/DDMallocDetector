@@ -10,19 +10,49 @@
 
 @interface MDDrawableView() {
     std::shared_ptr<MD::CanvasLayer> _canvas;
+    BOOL _rebuildCanvas;
 }
 
 @end
 
 @implementation MDDrawableView
 
-- (const std::shared_ptr<MD::CanvasLayer>&)canvas {
-    if (!_canvas) {
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _xAxis = std::make_shared<MD::XAxisLayer>();
+        _yAxis = std::make_shared<MD::YAxisLayer>();
+        _contentLayer = std::make_shared<MD::FillLayer>();
+        
         _canvas = std::make_shared<MD::CanvasLayer>();
-        MD::Color color = { 1, 1, 1, 1 };
-        _canvas->setBackgroundColor(color);
+        _canvas->setBackgroundColor({ 1, 1, 1, 1 });
     }
+    return self;
+}
+
+- (const std::shared_ptr<MD::CanvasLayer>&)canvas {
     return _canvas;
+}
+
+- (void)setNeedsRebuildCanvas {
+    _rebuildCanvas = YES;
+}
+
+- (void)rebuildCanvasIfNeeded {
+    if (_rebuildCanvas) {
+        _rebuildCanvas = NO;
+        [self rebuildCanvas];
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)rebuildCanvas {
+    auto& canvas = [self canvas];
+    canvas->RemoveLayers();
+    canvas->AddLayer(_contentLayer);
+    canvas->AddLayer(_xAxis);
+    canvas->AddLayer(_yAxis);
 }
 
 - (void)drawRect:(CGRect)rect {

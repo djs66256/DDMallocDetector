@@ -9,10 +9,19 @@
 #import <UIKit/UIKit.h>
 #include "CanvasLayer.h"
 #include "StrokeLayer.hpp"
+#include "AxisLayer.hpp"
 
-@interface MDDrawableView : UIView
+@interface MDDrawableView : UIView {
+@protected
+    std::shared_ptr<MD::XAxisLayer> _xAxis;
+    std::shared_ptr<MD::YAxisLayer> _yAxis;
+    std::shared_ptr<MD::FillLayer> _contentLayer;
+}
 
 
 - (const std::shared_ptr<MD::CanvasLayer>&)canvas;
+- (void)setNeedsRebuildCanvas;
+- (void)rebuildCanvasIfNeeded;
+- (void)rebuildCanvas NS_REQUIRES_SUPER;
 
 @end

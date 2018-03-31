@@ -20,6 +20,7 @@ namespace MD {
         Float y = 0;
         
         Point() {}
+        Point(const Point&) = default;
         Point(Float x, Float y) : x(x), y(y) {}
         Point(CGPoint p): x(p.x), y(p.y) {}
         
@@ -38,6 +39,7 @@ namespace MD {
         Float height = 0;
         
         Size() {}
+        Size(const Size& s) : width(s.width), height(s.height) { }
         Size(Float w, Float h) : width(w), height(h) {}
         Size(CGSize s) : width(s.width), height(s.height) {}
         
@@ -75,7 +77,8 @@ namespace MD {
         Size size;
         
         Rect() {}
-        Rect(CGRect r) : origin(r.origin), size(r.size) { }
+        Rect(const Rect& r) : origin(r.origin), size(r.size) { }
+        Rect(const CGRect r) : origin(r.origin), size(r.size) { }
         
         Float top() { return origin.y; }
         Float left() { return origin.x; }

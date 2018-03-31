@@ -13,6 +13,7 @@
 #include <vector>
 #include <mutex>
 #include <memory>
+#include <functional>
 #include "Allocator.hpp"
 #include "MallocStorage.hpp"
 #include "MallocCollector.hpp"
@@ -20,6 +21,11 @@
 namespace MD {
     class MallocPool {
     public:
+        typedef std::vector<MemoryStorage*, VMAllocator<MemoryStorage *>> pool_type;
+        
+        const pool_type& runningPool() const { return running_pool_; }
+        const pool_type& deadPool() const { return dead_pool_; }
+        
         void Attach(MemoryStorage *s) {
             std::lock_guard<std::mutex> l(lock_);
             running_pool_.emplace_back(s);
@@ -47,10 +53,22 @@ namespace MD {
             });
         }
         
+        void EnumerateRunningPool(std::function<void(MemoryStorage*)> cb) {
+            std::lock_guard<std::mutex> l(lock_);
+            
+            std::for_each(running_pool_.begin(), running_pool_.end(), cb);
+        }
+        
+        void EnumerateDeadPool(std::function<void(MemoryStorage*)> cb) {
+            std::lock_guard<std::mutex> l(lock_);
+            
+            std::for_each(dead_pool_.begin(), dead_pool_.end(), cb);
+        }
+        
     private:
         std::mutex lock_;
-        std::vector<MemoryStorage *> running_pool_;
-        std::vector<MemoryStorage *> dead_pool_;
+        pool_type running_pool_;
+        pool_type dead_pool_;
     };
 }
 

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MDStatisticsView.h"
+#import "MDPerThreadView.h"
 
 @interface MDGraphViewController : UIViewController
 
-@property (nonatomic, strong) MDStatisticsView *statView;
+@property (nonatomic, strong) MDPerThreadView *statView;
 
 @end

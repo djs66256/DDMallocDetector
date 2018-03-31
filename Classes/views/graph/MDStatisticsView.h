@@ -21,6 +21,5 @@ namespace MD {
 @interface MDStatisticsView : MDDrawableView
 
 - (void)setLines:(std::shared_ptr<MD::View::Lines>)lines;
-- (void)rebuildCanvasIfNeeded;
 
 @end

@@ -12,10 +12,7 @@
 
 @interface MDStatisticsView () {
     std::shared_ptr<MD::View::Lines> _lines;
-    BOOL _rebuildCanvas;
     
-    std::shared_ptr<MD::XAxisLayer> _xAxis;
-    std::shared_ptr<MD::YAxisLayer> _yAxis;
 }
 
 @end
@@ -26,14 +23,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _xAxis = std::make_shared<MD::XAxisLayer>();
         _xAxis->setEdges(MD::Edges(20, 100, 20, 100));
-        _xAxis->setRange(0, 8);
+        _xAxis->setRange(1, 8);
         _xAxis->getAnchors()->setMaxCount(10);
         _xAxis->getAnchors()->setDelta(1);
         _xAxis->setTriangleHeight(10);
         
-        _yAxis = std::make_shared<MD::YAxisLayer>();
         _yAxis->setEdges(MD::Edges(20, 100, 20, 100));
         _yAxis->setRange(0, 10);
         _yAxis->getAnchors()->setMaxCount(20);
@@ -42,29 +37,21 @@
     return self;
 }
 
-- (void)setNeedsRebuildCanvas {
-    _rebuildCanvas = YES;
-}
-
-- (void)rebuildCanvasIfNeeded {
-    if (_rebuildCanvas) {
-        auto& canvas = self.canvas;
-        canvas->RemoveLayers();
-        auto contentLayer = std::make_shared<MD::FillLayer>();
-        contentLayer->setEdges(MD::Edges(20, 100, 20, 100));
-        contentLayer->setBackgroundColor({0.2, 0.2, 0.2});
-        canvas->AddLayer(contentLayer);
-        canvas->AddLayer(_xAxis);
-        canvas->AddLayer(_yAxis);
-        if (_lines) {
-            std::for_each(_lines->begin(), _lines->end(), [&](auto& line) {
-                auto layer = std::make_shared<MD::IntStrokeLayer>();
-                layer->setEdges(MD::Edges(20, 100, 20, 100));
-                layer->setColor(1, 0, 0);
-                layer->setLine(line, 0, 10);
-                canvas->AddLayer(layer);
-            });
-        }
+- (void)rebuildCanvas {
+    [super rebuildCanvas];
+    auto& canvas = self.canvas;
+    _contentLayer->setEdges(MD::Edges(20, 100, 20, 100));
+    _contentLayer->setBackgroundColor({0.2, 0.2, 0.2});
+    if (_lines) {
+        std::for_each(_lines->begin(), _lines->end(), [&](std::shared_ptr<MD::View::Line>& line) {
+            auto layer = std::make_shared<MD::IntStrokeLayer>();
+            layer->setEdges(MD::Edges(20, 100, 20, 100));
+            layer->setColor(1, 0, 0);
+            layer->setXRange({0, CGFloat(line->size())});
+            layer->setYRange({0, 10});
+            layer->setLine(line);
+            canvas->AddLayer(layer);
+        });
     }
 }
 

@@ -9,6 +9,7 @@
 #import "MDControlViewController.h"
 #import "MDGraphViewController.h"
 #import "MDInspectorIcon.h"
+#import "MemoryDetector.hpp"
 
 @interface MDControlViewController ()
 @property (nonatomic, strong) MDInspectorIcon *icon;
@@ -35,6 +36,10 @@
 }
 
 - (void)onIcon:(id)sender {
+    if (MD::MemoryDetector::GetInstance()->Running()) {
+        MD::MemoryDetector::GetInstance()->Stop();
+    }
+    
     MDGraphViewController *vc = [MDGraphViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
