@@ -50,7 +50,10 @@ namespace MD {
             value_list_type_ptr list_;
         };
         
-        
+        template<class _T>
+        inline CompositeNormalize<_T> make_normalize(std::shared_ptr<_T> value) {
+            return CompositeNormalize<_T>(value);
+        }
         
         template<class _T = std::pair<class _T1, class _T2>>
         class Scale : public Normalize<_T> {

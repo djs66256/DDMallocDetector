@@ -18,6 +18,9 @@
 		65064D00206FFA19006D207E /* MDPerThreadView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064CFF206FFA19006D207E /* MDPerThreadView.mm */; };
 		65064D07207122C6006D207E /* MDControlViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D03207122C6006D207E /* MDControlViewController.mm */; };
 		65064D08207122C6006D207E /* MDGraphViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D05207122C6006D207E /* MDGraphViewController.mm */; };
+		65064D0B20713632006D207E /* AnalysisBySize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064D0920713632006D207E /* AnalysisBySize.cpp */; };
+		65064D0E20714161006D207E /* MDBySizeGraphViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D0D20714161006D207E /* MDBySizeGraphViewController.mm */; };
+		65064D112071496D006D207E /* MDBySizeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D102071496D006D207E /* MDBySizeView.mm */; };
 		BE8C5845206E6D1500D81AE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5844206E6D1500D81AE6 /* AppDelegate.m */; };
 		BE8C5848206E6D1500D81AE6 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5847206E6D1500D81AE6 /* ViewController.mm */; };
 		BE8C584B206E6D1500D81AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8C5849206E6D1500D81AE6 /* Main.storyboard */; };
@@ -64,6 +67,12 @@
 		65064D04207122C6006D207E /* MDGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDGraphViewController.h; sourceTree = "<group>"; };
 		65064D05207122C6006D207E /* MDGraphViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDGraphViewController.mm; sourceTree = "<group>"; };
 		65064D06207122C6006D207E /* MDControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDControlViewController.h; sourceTree = "<group>"; };
+		65064D0920713632006D207E /* AnalysisBySize.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnalysisBySize.cpp; sourceTree = "<group>"; };
+		65064D0A20713632006D207E /* AnalysisBySize.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnalysisBySize.hpp; sourceTree = "<group>"; };
+		65064D0C20714161006D207E /* MDBySizeGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeGraphViewController.h; sourceTree = "<group>"; };
+		65064D0D20714161006D207E /* MDBySizeGraphViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeGraphViewController.mm; sourceTree = "<group>"; };
+		65064D0F2071496D006D207E /* MDBySizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeView.h; sourceTree = "<group>"; };
+		65064D102071496D006D207E /* MDBySizeView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeView.mm; sourceTree = "<group>"; };
 		BE761A732070B2CA001C8249 /* Normalize.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Normalize.hpp; sourceTree = "<group>"; };
 		BE8C5840206E6D1500D81AE6 /* DDMallocDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDMallocDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8C5843206E6D1500D81AE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +150,8 @@
 				BE8C587E206E6D4800D81AE6 /* MDStatisticsView.mm */,
 				65064CFE206FFA19006D207E /* MDPerThreadView.h */,
 				65064CFF206FFA19006D207E /* MDPerThreadView.mm */,
+				65064D0F2071496D006D207E /* MDBySizeView.h */,
+				65064D102071496D006D207E /* MDBySizeView.mm */,
 			);
 			path = graph;
 			sourceTree = "<group>";
@@ -185,6 +196,8 @@
 				65064CF2206EA9DF006D207E /* DataAnalysisCenter.hpp */,
 				65064CF4206F76B3006D207E /* AnalysisPerThread.cpp */,
 				65064CF5206F76B3006D207E /* AnalysisPerThread.hpp */,
+				65064D0920713632006D207E /* AnalysisBySize.cpp */,
+				65064D0A20713632006D207E /* AnalysisBySize.hpp */,
 				65064CF7206F78C5006D207E /* AnalysisTask.cpp */,
 				65064CF8206F78C5006D207E /* AnalysisTask.hpp */,
 				65064CFB206FCC8F006D207E /* AnalysisTaskRunner.cpp */,
@@ -196,10 +209,12 @@
 		65064D02207122C6006D207E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				65064D06207122C6006D207E /* MDControlViewController.h */,
 				65064D03207122C6006D207E /* MDControlViewController.mm */,
+				65064D0C20714161006D207E /* MDBySizeGraphViewController.h */,
+				65064D0D20714161006D207E /* MDBySizeGraphViewController.mm */,
 				65064D04207122C6006D207E /* MDGraphViewController.h */,
 				65064D05207122C6006D207E /* MDGraphViewController.mm */,
-				65064D06207122C6006D207E /* MDControlViewController.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -360,6 +375,7 @@
 				65064CF9206F78C5006D207E /* AnalysisTask.cpp in Sources */,
 				BE8C5880206E6D4800D81AE6 /* CanvasLayer.mm in Sources */,
 				BE8C5848206E6D1500D81AE6 /* ViewController.mm in Sources */,
+				65064D0B20713632006D207E /* AnalysisBySize.cpp in Sources */,
 				BE8C5881206E6D4800D81AE6 /* FillLayer.cpp in Sources */,
 				BE8C588C206E6D4800D81AE6 /* MDStatisticsView.mm in Sources */,
 				BE8C588A206E6D4800D81AE6 /* ThreadLocal.cpp in Sources */,
@@ -367,6 +383,7 @@
 				65064CED206EA802006D207E /* DDMallocDetector.cpp in Sources */,
 				65064D08207122C6006D207E /* MDGraphViewController.mm in Sources */,
 				65064D00206FFA19006D207E /* MDPerThreadView.mm in Sources */,
+				65064D112071496D006D207E /* MDBySizeView.mm in Sources */,
 				BE8C5853206E6D1500D81AE6 /* main.mm in Sources */,
 				BE8C587F206E6D4800D81AE6 /* AxisLayer.mm in Sources */,
 				65064D07207122C6006D207E /* MDControlViewController.mm in Sources */,
@@ -379,6 +396,7 @@
 				65064CFD206FCC8F006D207E /* AnalysisTaskRunner.cpp in Sources */,
 				BE8C5887206E6D4800D81AE6 /* MallocWrapZone.cpp in Sources */,
 				BE8C5882206E6D4800D81AE6 /* Layer.cpp in Sources */,
+				65064D0E20714161006D207E /* MDBySizeGraphViewController.mm in Sources */,
 				65064CDD206E9C9C006D207E /* MDInspectorIcon.m in Sources */,
 				65064CF0206EA94E006D207E /* DataOverflowOberser.cpp in Sources */,
 				BE8C5845206E6D1500D81AE6 /* AppDelegate.m in Sources */,

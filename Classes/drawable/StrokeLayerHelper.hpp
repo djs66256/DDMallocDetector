@@ -69,6 +69,29 @@ namespace MD {
         FloatRange xRange_;
         FloatRange yRange_;
     };
+    
+    template<class _V = std::pair<class _T1, class _T2>>
+    struct PairLinearLocation final {
+    public:
+        PairLinearLocation(Rect& r, FloatRange& x, FloatRange& y, std::size_t count)
+        : r_(r), yHeight_(y.max - y.min), yRange_(y), x_(r.left()), deltaX_(count > 1 ? r.width()/(count-1) : 0) {}
+        
+        Float x(_V& v) {
+            Float r = x_;
+            x_ += deltaX_;
+            return r;
+        }
+        Float y(_V& v) {
+            return r_.bottom() - (Float(v.second) - yRange_.min) * r_.height() / yHeight_;
+        }
+        
+    private:
+        Rect& r_;
+        Float yHeight_;
+        FloatRange yRange_;
+        Float x_ = 0;
+        Float deltaX_;
+    };
 }
 
 #endif // StrokeLayerHelper_hpp

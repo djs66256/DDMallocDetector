@@ -36,8 +36,10 @@ namespace MD {
         
         const FloatRange& xRange() const { return xRange_; }
         void setXRange(FloatRange r) { xRange_ = r; }
+        void setXRange(Float min, Float max) { xRange_.min = min; xRange_.max = max; }
         const FloatRange& yRange() const { return yRange_; }
         void setYRange(FloatRange r) { yRange_ = r; }
+        void setYRange(Float min, Float max) { yRange_.min = min; yRange_.max = max; }
         
         void setLine(line_type line) { line_ = line; }
         void setLine(line_type&& line) { line_ = line; }
@@ -60,8 +62,12 @@ namespace MD {
     class PairStrokeLayer : public StrokeLayer<std::pair<_T1, _T2>, PairLocation<std::pair<_T1, _T2>>> {
         
     };
+    template<class _T1, class _T2>
+    class PairLinearStrokeLayer : public StrokeLayer<std::pair<_T1, _T2>, PairLinearLocation<std::pair<_T1, _T2>>> {
+        
+    };
     
-#if 0
+#if 1
 #define LOG(x, y) printf("(%f, %f)\n", x, y)
 #else
 #define LOG(x, y)
