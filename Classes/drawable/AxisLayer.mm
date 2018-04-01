@@ -32,8 +32,9 @@ namespace MD {
         
         if (getAnchors()->hasValue()) {
             // stroke anchor
+            std::size_t idx = 0;
             std::for_each(anchors().begin(), anchors().end(), [&](auto& i) {
-                Float x = r.left() + i / (anchors().count() - 1) * r.width();
+                Float x = r.left() + r.width() * idx / (anchors().count() - 1);
                 CGContextMoveToPoint(ctx, x, r.bottom());
                 CGContextAddLineToPoint(ctx, x, r.bottom() + 3);
                 CGContextStrokePath(ctx);
@@ -53,6 +54,7 @@ namespace MD {
                 }
                 [text drawAtPoint:CGPointMake(x - 10, r.bottom() + 5)
                    withAttributes:@{ NSForegroundColorAttributeName: UIColorFrom(textColor()) }];
+                ++idx;
             });
         }
         
@@ -93,8 +95,9 @@ namespace MD {
         CGContextStrokePath(ctx);
         
         // stroke anchor
+        std::size_t idx = 0;
         std::for_each(anchors().begin(), anchors().end(), [&](auto& i) {
-            Float y = r.bottom() - i / (anchors().count() - 1) * r.height();
+            Float y = r.bottom() - r.height() * idx / (anchors().count() - 1);
             CGContextMoveToPoint(ctx, r.left(), y);
             CGContextAddLineToPoint(ctx, r.left() - 3, y);
             CGContextStrokePath(ctx);
@@ -114,6 +117,7 @@ namespace MD {
             }
             [text drawAtPoint:CGPointMake(r.left() - 20, y - 8)
                withAttributes:@{ NSForegroundColorAttributeName: UIColorFrom(textColor()) }];
+            ++idx;
         });
         
         // stroke triangle

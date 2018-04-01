@@ -121,6 +121,9 @@ namespace MD {
         
         Color& textColor() { return text_color_; }
         void setTextColor(Color& clr) { text_color_ = clr; }
+        void setTextColor(float r, float g, float b, float a = 1) {
+            text_color_.setComponents(r, g, b, a);
+        }
         
     private:
         Float triangle_height_ = 20;

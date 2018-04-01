@@ -7,8 +7,8 @@
 //
 
 #import "MDGraphViewController.h"
-#import "../../../analysis/AnalysisPerThread.hpp"
-#import "../../../base/Normalize.hpp"
+#import "../../analysis/AnalysisPerThread.hpp"
+#import "../../base/Normalize.hpp"
 
 using namespace MD::Normalize;
 
