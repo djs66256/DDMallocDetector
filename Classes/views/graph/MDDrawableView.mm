@@ -22,6 +22,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _xAxis = std::make_shared<MD::XAxisLayer>();
+        _xAxis->setTriangleHeight(10);
         _yAxis = std::make_shared<MD::YAxisLayer>();
         _contentLayer = std::make_shared<MD::FillLayer>();
         

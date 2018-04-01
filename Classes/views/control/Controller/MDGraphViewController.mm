@@ -8,6 +8,9 @@
 
 #import "MDGraphViewController.h"
 #import "../../../analysis/AnalysisPerThread.hpp"
+#import "../../../base/Normalize.hpp"
+
+using namespace MD::Normalize;
 
 @interface MDGraphViewController ()
 
@@ -42,9 +45,34 @@
         MD::AnalysisPerThread a;
         a.Start();
         auto data = a.data();
+        auto threadInfo = data->thread_memory()[0];
+        typedef MD::PerThreadData::memory_info_type T;
+        CompositeNormalize<T> parser(threadInfo.memory);
+        parser.then(Compress<T>(256*4)).then(Scale<T>().scale([](auto& v){
+            if (v.second > 0) {
+                v.second = log2(v.second/8);
+            }
+            else {
+                v.second = 0;
+            }
+        }));
+        threadInfo.memory = parser.list();
+        
+//        threadInfo.max = threadInfo.min = *(threadInfo.memory->begin());
+//        std::for_each(threadInfo.memory->begin(), threadInfo.memory->end(), [&](auto& i) {
+//            if (threadInfo.max.second < i.second) {
+//                threadInfo.max = i;
+//            }
+//            if (threadInfo.min.second > i.second) {
+//                threadInfo.min = i;
+//            }
+//        });
+        
+        threadInfo.min = {threadInfo.memory->at(0).first, 0};
+        threadInfo.max = {threadInfo.memory->at(threadInfo.memory->size() - 1).first, log(1024*1024*100)};
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.statView setPerThreadData:data->thread_memory()[0]];
+            [self.statView setPerThreadData:threadInfo];
             [self.statView rebuildCanvasIfNeeded];
         });
     });

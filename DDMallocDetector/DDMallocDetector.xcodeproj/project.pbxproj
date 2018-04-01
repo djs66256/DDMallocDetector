@@ -64,7 +64,7 @@
 		65064CFC206FCC8F006D207E /* AnalysisTaskRunner.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnalysisTaskRunner.hpp; sourceTree = "<group>"; };
 		65064CFE206FFA19006D207E /* MDPerThreadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDPerThreadView.h; sourceTree = "<group>"; };
 		65064CFF206FFA19006D207E /* MDPerThreadView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDPerThreadView.mm; sourceTree = "<group>"; };
-		65064D012070168C006D207E /* DataScale.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DataScale.hpp; sourceTree = "<group>"; };
+		BE761A732070B2CA001C8249 /* Normalize.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Normalize.hpp; sourceTree = "<group>"; };
 		BE8C5840206E6D1500D81AE6 /* DDMallocDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDMallocDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8C5843206E6D1500D81AE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE8C5844206E6D1500D81AE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -179,6 +179,7 @@
 		65064CE9206EA6DD006D207E /* base */ = {
 			isa = PBXGroup;
 			children = (
+				BE761A732070B2CA001C8249 /* Normalize.hpp */,
 				BE8C5869206E6D4800D81AE6 /* Macros.h */,
 				BE8C585A206E6D4800D81AE6 /* Allocator.hpp */,
 				BE8C5878206E6D4800D81AE6 /* ThreadLocal.cpp */,
@@ -200,7 +201,6 @@
 				65064CF8206F78C5006D207E /* AnalysisTask.hpp */,
 				65064CFB206FCC8F006D207E /* AnalysisTaskRunner.cpp */,
 				65064CFC206FCC8F006D207E /* AnalysisTaskRunner.hpp */,
-				65064D012070168C006D207E /* DataScale.hpp */,
 			);
 			path = analysis;
 			sourceTree = "<group>";

@@ -61,7 +61,7 @@ namespace MD {
         
     };
     
-#if 1
+#if 0
 #define LOG(x, y) printf("(%f, %f)\n", x, y)
 #else
 #define LOG(x, y)

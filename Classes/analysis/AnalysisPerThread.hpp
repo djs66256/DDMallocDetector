@@ -34,7 +34,7 @@ namespace MD {
         
         PerThreadData() : thread_memory_() {}
         
-        const thread_memory_type& thread_memory() const {
+        thread_memory_type& thread_memory() {
             return thread_memory_;
         }
     private:

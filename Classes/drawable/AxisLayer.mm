@@ -129,7 +129,7 @@ namespace MD {
         // stroke name
         CGContextSetStrokeColor(ctx, textColor());
         NSString *text = [NSString stringWithCString:name().c_str() encoding:NSUTF8StringEncoding];
-        [text drawAtPoint:CGPointMake(r.left() + 8, r.top() + triangleHeight() - 5)
+        [text drawAtPoint:CGPointMake(r.left() + 8, r.top() - triangleHeight() + 5)
            withAttributes:@{ NSForegroundColorAttributeName: UIColorFrom(textColor()) }];
         
         CGContextRestoreGState(ctx);

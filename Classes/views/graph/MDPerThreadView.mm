@@ -6,6 +6,7 @@
 //  Copyright © 2018年 Daniel. All rights reserved.
 //
 
+#include <strstream>
 #import "MDPerThreadView.h"
 #include "StrokeLayer.hpp"
 
@@ -28,6 +29,10 @@ typedef MD::PairStrokeLayer<time_t, std::size_t> TimeSizeLayer;
         _yAxis->setEdges(MD::Edges(20, 100, 20, 100));
         _contentLayer->setEdges(MD::Edges(20, 100, 20, 100));
         _contentLayer->setBackgroundColor({0.2, 0.2, 0.2});
+        
+//        _yAxis->anchors().setFormatter([](auto f) {
+//
+//        });
     }
     return self;
 }
@@ -38,6 +43,9 @@ typedef MD::PairStrokeLayer<time_t, std::size_t> TimeSizeLayer;
         _lineLayer->setLine(_lines);
         _lineLayer->setXRange({CGFloat(_lines->at(0).first), CGFloat(_lines->at(_lines->size() - 1).first)});
         _lineLayer->setYRange({CGFloat(data.min.second), CGFloat(data.max.second)});
+        
+        _xAxis->setRange(data.min.first, data.max.first);
+        _yAxis->setRange(data.min.second, data.max.second);
         [self setNeedsRebuildCanvas];
     }
 }

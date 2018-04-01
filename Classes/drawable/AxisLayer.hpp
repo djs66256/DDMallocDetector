@@ -26,8 +26,8 @@ namespace MD {
         public:
             class Iterator {
             public:
-                Iterator(Float delta, int count)
-                : delta_(delta), count_(count) {}
+                Iterator(Float start, Float delta, int count)
+                : current_(start), delta_(delta), count_(count) {}
                 
                 bool operator== (const Iterator& i) { return count_ == i.count_; }
                 bool operator!= (const Iterator& i) { return !(*this == i); }
@@ -49,7 +49,7 @@ namespace MD {
                     count_ = fabs(floor((max_ - min_) / delta_)) + 1;
                     while (count_ > max_count_) {
                         delta *= 2;
-                        count_ = fabs(ceil((max_ - min_) / delta_));
+                        count_ = fabs(ceil((max_ - min_) / delta));
                     }
                     real_delta_ = delta;
                     // 1 point is just zero.
@@ -79,10 +79,10 @@ namespace MD {
             int count() const { return count_; }
             
             Iterator begin() const {
-                return Iterator(delta_, count_);
+                return Iterator(min_, real_delta_, count_);
             }
             Iterator end() const {
-                return Iterator(0, 0);
+                return Iterator(min_, 0, 0);
             }
             
             bool hasValue() const {
@@ -98,7 +98,7 @@ namespace MD {
             Float delta_ = 1;
             Float min_ = 0;
             Float max_ = 0;
-            int max_count_ = 5;
+            int max_count_ = 10;
             int count_ = 0;
             Float real_delta_ = 0;
             formatter_type formatter_;
@@ -107,7 +107,7 @@ namespace MD {
         void setRange(Float min, Float max) { anchors_.setMin(min); anchors_.setMax(max); }
         Float min() { return anchors_.min(); }
         Float max() { return anchors_.max(); }
-        const Anchors& anchors() const { return anchors_; }
+        Anchors& anchors() { return anchors_; }
         Anchors* getAnchors() { return &anchors_; }
         
         void setName(std::string&& name) { name_ = name; }
