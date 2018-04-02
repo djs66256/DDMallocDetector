@@ -43,7 +43,7 @@ namespace MD {
         double positionAt(std::size_t idx) override { return double(idx) / (count_ - 1); }
         std::string&& nameAt(std::size_t idx) override {
             if (formatter_) {
-                std::string name = formatter_(value_type(double(max_ - min_) / count_ * idx));
+                std::string name = formatter_(value_type(double(max_ - min_) / (count_ - 1) * idx));
                 return std::move(name);
             }
             else {

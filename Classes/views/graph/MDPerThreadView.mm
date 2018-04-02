@@ -27,13 +27,8 @@ typedef MD::PairStrokeLayer<time_t, std::size_t> TimeSizeLayer;
         _lineLayer->setColor(1, 0, 0);
         
         _xAxis->setName("Time");
-        _xAxis->setEdges(MD::Edges(20, 100, 20, 100));
         
         _yAxis->setName("Mem(log2)");
-        _yAxis->setEdges(MD::Edges(20, 100, 20, 100));
-        
-        _contentLayer->setEdges(MD::Edges(20, 100, 20, 100));
-        _contentLayer->setBackgroundColor({0.2, 0.2, 0.2});
         
 //        _yAxis->anchors().setFormatter([](auto f) {
 //            std::strstream s;
@@ -56,16 +51,16 @@ typedef MD::PairStrokeLayer<time_t, std::size_t> TimeSizeLayer;
     return self;
 }
 
-- (void)setPerThreadData:(const MD::PerThreadData::ThreadInfo &)data {
-    if (data.memory->size() > 2) {
-        _lines = data.memory;
+- (void)setPerThreadData:(MD::PerThreadData::memory_list_type_ptr)data {
+    if (data->size() > 2) {
+        _lines = data;
         _lineLayer->setLine(_lines);
         _lineLayer->setXRange({CGFloat(_lines->at(0).first), CGFloat(_lines->at(_lines->size() - 1).first)});
-        _lineLayer->setYRange({CGFloat(data.min.second), CGFloat(data.max.second)});
-        _minX = data.min.first;
         
-//        _xAxis->setRange(data.min.first, data.max.first);
-//        _yAxis->setRange(data.min.second, data.max.second);
+        CGFloat max = log(1024*1024*100);
+        _lineLayer->setYRange({CGFloat(0), CGFloat(max)});
+        _minX = CGFloat(_lines->at(0).first);
+        
         [self setNeedsRebuildCanvas];
     }
 }

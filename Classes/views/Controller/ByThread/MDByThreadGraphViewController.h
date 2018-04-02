@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MDPerThreadView.h"
 
-@interface MDGraphViewController : UIViewController
+@interface MDByThreadGraphViewController : UIViewController
 
 @property (nonatomic, strong) MDPerThreadView *statView;
+
+- (void)setData:(MD::PerThreadData::memory_list_type_ptr)data;
 
 @end

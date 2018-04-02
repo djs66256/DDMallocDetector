@@ -7,7 +7,6 @@
 //
 
 #import "MDControlViewController.h"
-#import "MDGraphViewController.h"
 #import "MDInspectorIcon.h"
 #import "MemoryDetector.hpp"
 #import "MDAnalysisGroupTableViewController.h"

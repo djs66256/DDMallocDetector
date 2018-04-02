@@ -30,7 +30,7 @@ namespace MD {
         CGContextSetStrokeColor(ctx, color());
         CGContextStrokePath(ctx);
         
-        if (anchors()->count()) {
+        if (anchors() && anchors()->count()) {
             // stroke anchor
             for (int i = 0; i < anchors()->count(); ++i) {
                 Float x = r.left() + r.width() * anchors()->positionAt(i);
@@ -117,7 +117,7 @@ namespace MD {
         CGContextStrokePath(ctx);
         
         // stroke anchor
-        if (anchors()->count()) {
+        if (anchors() && anchors()->count()) {
             // stroke anchor
             for (int i = 0; i < anchors()->count(); ++i) {
                 Float y = r.bottom() - r.height() * anchors()->positionAt(i);

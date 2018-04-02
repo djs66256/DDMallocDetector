@@ -9,6 +9,7 @@
 #import "MDAnalysisGroupTableViewController.h"
 #import "MDBySizeGroupTableViewController.h"
 #import "MDByTimeGroupTableViewController.h"
+#import "MDByThreadGroupTableViewController.h"
 
 @interface MDAnalysisGroupTableViewController ()
 @property (nonatomic, strong) NSArray *data;
@@ -27,6 +28,10 @@
                   @{
                       @"class": MDByTimeGroupTableViewController.class,
                       @"title": @"时间分析"
+                      },
+                  @{
+                      @"class": MDByThreadGroupTableViewController.class,
+                      @"title": @"按申请顺序"
                       }];
 }
 

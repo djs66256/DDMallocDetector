@@ -40,10 +40,10 @@ typedef std::shared_ptr<BySizeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
         _xAnchors->setFormatter([](auto& v) {
             std::strstream s;
             if (v.first >= 1024 * 1024) {
-                s << std::setprecision(1) << std::fixed << double(v.first) / 1024 / 1024 << "M";
+                s << std::setprecision(0) << std::fixed << double(v.first) / 1024 / 1024 << "M";
             }
             else if (v.first >= 1024) {
-                s << std::setprecision(1) << std::fixed << double(v.first) / 1024 << "K";
+                s << std::setprecision(0) << std::fixed << double(v.first) / 1024 << "K";
             }
             else {
                 s << v.first;
@@ -54,7 +54,6 @@ typedef std::shared_ptr<BySizeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
         
         _yAnchors = std::make_shared<BySizeAnchors>();
         _yAnchors->setFormatter([](auto f) -> const char* {
-            printf("%f\n", f);
             if (f < 0.01) {
                 return "0";
             }

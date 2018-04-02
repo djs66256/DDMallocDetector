@@ -13,7 +13,7 @@
 
 typedef MD::PairLinearStrokeLayer<std::size_t, double> MDByTimeViewLayer;
 
-typedef MD::LinearAnchors<std::size_t> ByTimeAnchors;
+typedef MD::LinearAnchors<double> ByTimeAnchors;
 typedef MD::DiscreteAnchors<MDByTimeItemType> ByTimeDiscreteAnchors;
 typedef std::shared_ptr<ByTimeAnchors> BySizeAnchorsPtr;
 typedef std::shared_ptr<ByTimeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
@@ -43,10 +43,10 @@ typedef std::shared_ptr<ByTimeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
         _xAnchors->setFormatter([](auto& v) {
             std::strstream s;
             if (v.first >= 1024 * 1024) {
-                s << std::setprecision(1) << std::fixed << double(v.first) / 1024 / 1024 << "M";
+                s << std::setprecision(0) << std::fixed << double(v.first) / 1024 / 1024 << "M";
             }
             else if (v.first >= 1024) {
-                s << std::setprecision(1) << std::fixed << double(v.first) / 1024 << "K";
+                s << std::setprecision(0) << std::fixed << double(v.first) / 1024 << "K";
             }
             else {
                 s << v.first;
@@ -56,6 +56,11 @@ typedef std::shared_ptr<ByTimeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
         _xAxis->setAnchors(_xAnchors);
         
         _yAnchors = std::make_shared<ByTimeAnchors>();
+        _yAnchors->setFormatter([](auto v) {
+            std::strstream s;
+            s << std::setprecision(1) << std::fixed << v;
+            return s.str();
+        });
         _yAxis->setAnchors(_yAnchors);
     }
     return self;
@@ -68,6 +73,7 @@ typedef std::shared_ptr<ByTimeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
     std::for_each(data->begin(), data->end(), [&](auto& p) {
         _max = std::max(p.second, _max);
     });
+    _max = ceil(_max/10)*10;
     
     _xAnchors->setPoints(data);
     _yAnchors->setRange(0, _max);

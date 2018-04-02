@@ -46,7 +46,7 @@
     });
     _maxY = ceil(double(max) / 1000) * 1000;
     
-    [self printData];
+//    [self printData];
     if (self.graphView) {
         [self.graphView setList:_data minCount:0 maxCount:_maxY];
         [self.graphView rebuildCanvasIfNeeded];

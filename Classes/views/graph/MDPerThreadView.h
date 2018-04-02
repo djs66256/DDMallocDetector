@@ -11,6 +11,6 @@
 
 @interface MDPerThreadView : MDDrawableView
 
-- (void)setPerThreadData:(const MD::PerThreadData::ThreadInfo &)data;
+- (void)setPerThreadData:(MD::PerThreadData::memory_list_type_ptr)data;
 
 @end

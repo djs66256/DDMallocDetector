@@ -14,6 +14,7 @@
 #include <functional>
 #include <memory>
 #include <cmath>
+#include <assert.h>
 
 namespace MD {
     namespace Normalize {
@@ -85,13 +86,19 @@ namespace MD {
             typedef typename root::value_list_type value_list_type;
             typedef typename root::value_list_type_ptr value_list_type_ptr;
 
-            Compress(std::size_t maxSize) : max_size_(maxSize) {}
+            Compress(std::size_t maxSize) : max_size_(maxSize) {
+                assert(maxSize > 4);
+            }
 
             value_list_type_ptr operator()(value_list_type_ptr list) {
 //                std::size_t size = floor(double(list->size()) / double(max_size_ - 1));
-                if (max_size_ <= 1 || list->size() <= 1) return list;
+                if (max_size_ <= 1 || list->size() <= max_size_) return list;
                 
                 auto delta = (list->at(list->size() - 1).first - list->at(0).first) / (max_size_ - 1);
+                if (delta <= 1) {
+//                    printf("first: %ld, last: %ld, count: %ld\n", list->at(list->size() - 1).first, list->at(0).first, list->size());
+                    return list;
+                }
                 auto x = list->at(0).first;
                 value_list_type_ptr new_ptr = std::make_shared<value_list_type>();
                 for (auto i = list->begin(); i != list->end(); ) {
