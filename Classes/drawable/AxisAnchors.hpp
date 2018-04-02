@@ -90,7 +90,7 @@ namespace MD {
         }
 
         std::size_t count() override { return display_count_; }
-        double positionAt(std::size_t idx) override { return double(idx) / (display_count_ - 1); }
+        double positionAt(std::size_t idx) override { return double(idx) * duration_ / (points_->size() - 1); }
         std::string&& nameAt(std::size_t idx) override {
             if (formatter_) {
                 std::string name = formatter_(points_->at(idx * duration_));
@@ -111,8 +111,12 @@ namespace MD {
     private:
         void UpdateDuration() {
             if (points_ && points_->size() > max_count_) {
-                display_count_ = max_count_;
-                duration_ = points_->size() / (display_count_ - 1);
+                display_count_ = points_->size();
+                duration_ = 1;
+                do {
+                    duration_ *= 2;
+                    display_count_ /= 2;
+                } while (display_count_ > max_count_);
             }
             else {
                 display_count_ = points_ ? points_->size() : 0;

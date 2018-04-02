@@ -288,13 +288,13 @@
 		BE8C5859206E6D4800D81AE6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				65064CE9206EA6DD006D207E /* base */,
-				65064CE8206EA69E006D207E /* detector */,
-				BE8C585B206E6D4800D81AE6 /* drawable */,
 				65064CEA206EA776006D207E /* analysis */,
-				BE8C587A206E6D4800D81AE6 /* views */,
+				65064CE9206EA6DD006D207E /* base */,
 				65064CEB206EA802006D207E /* DDMallocDetector.cpp */,
 				65064CEC206EA802006D207E /* DDMallocDetector.h */,
+				65064CE8206EA69E006D207E /* detector */,
+				BE8C585B206E6D4800D81AE6 /* drawable */,
+				BE8C587A206E6D4800D81AE6 /* views */,
 			);
 			name = Classes;
 			path = ../Classes;

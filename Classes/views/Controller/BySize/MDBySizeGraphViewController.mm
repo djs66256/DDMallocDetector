@@ -38,10 +38,17 @@
 
 - (void)setData:(MDBySizeGraphViewControllerData)data {
     _data = data;
+    [self printData];
     if (self.graphView) {
         [self.graphView setList:_data minCount:0 maxCount:5000];
         [self.graphView rebuildCanvasIfNeeded];
     }
+}
+
+- (void)printData {
+    std::for_each(_data->begin(), _data->end(), [](auto& p) {
+        printf("(%ld, %ld)\n", p.first, p.second);
+    });
 }
 
 /*
