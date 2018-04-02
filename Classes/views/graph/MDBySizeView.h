@@ -16,6 +16,7 @@ typedef std::shared_ptr<std::vector<MDBySizeItemType>> MDBySizeListType;
 
 @interface MDBySizeView : MDDrawableView
 
+//- (void)setXMin:(std::size_t)min max:(std::size_t)max;
 - (void)setList:(MDBySizeListType)list minCount:(std::size_t)min maxCount:(std::size_t)max;
 
 @end

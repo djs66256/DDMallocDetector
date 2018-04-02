@@ -24,15 +24,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         _xAxis->setEdges(MD::Edges(20, 100, 20, 100));
-        _xAxis->setRange(1, 8);
-        _xAxis->getAnchors()->setMaxCount(10);
-        _xAxis->getAnchors()->setDelta(1);
+//        _xAxis->setRange(1, 8);
+//        _xAxis->getAnchors()->setMaxCount(10);
+//        _xAxis->getAnchors()->setDelta(1);
         _xAxis->setTriangleHeight(10);
         
         _yAxis->setEdges(MD::Edges(20, 100, 20, 100));
-        _yAxis->setRange(0, 10);
-        _yAxis->getAnchors()->setMaxCount(20);
-        _yAxis->getAnchors()->setDelta(1);
+//        _yAxis->setRange(0, 10);
+//        _yAxis->getAnchors()->setMaxCount(20);
+//        _yAxis->getAnchors()->setDelta(1);
     }
     return self;
 }

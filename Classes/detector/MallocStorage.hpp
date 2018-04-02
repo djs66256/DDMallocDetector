@@ -14,6 +14,7 @@
 #include <chrono>
 #include <vector>
 #include <mutex>
+#include <strstream>
 #include "Allocator.hpp"
 #include "MallocMemory.hpp"
 #include "MallocCollectorHelper.hpp"
@@ -23,7 +24,7 @@ namespace MD {
     template<class _Tp, class _Allocator = VMAllocator<_Tp> >
     class Storage {
     public:
-        Storage() : start_time_(std::chrono::system_clock::now()) {store_.reserve(128);}
+        Storage(pthread_t pid) : pid_(pid), start_time_(std::chrono::system_clock::now()) {store_.reserve(128);}
         
         static void* operator new(std::size_t size) noexcept {
             std::size_t n = round_page(size);
@@ -56,8 +57,32 @@ namespace MD {
             return store_;
         }
         
+        void setMainThread() { main_thread_ = true; }
         void setName(std::string&& name) { name_ = name; }
-        std::string& name() { return name_; }
+        std::string& name() {
+            if (name_.size() == 0) {
+                if (main_thread_) {
+                    std::strstream s;
+                    s << "Main(" << pid_ << ")";
+                    s >> name_;
+                }
+                else {
+                    char buf[128] = {0};
+                    int rc = pthread_getname_np(pid_, buf, sizeof(buf));
+                    if (rc == 0 && strlen(buf) > 0) {
+                        VMAllocator<char> allocator;
+                        std::string thread_name(buf, allocator);
+                        name_ = std::move(thread_name);
+                    }
+                    else {
+                        std::strstream s;
+                        s << "pid(" << pid_ << ")";
+                        s >> name_;
+                    }
+                }
+            }
+            return name_;
+        }
         
         void clear() {
             std::lock_guard<std::mutex> l(lock_);
@@ -69,6 +94,8 @@ namespace MD {
         }
         
     private:
+        pthread_t pid_;
+        bool main_thread_;
         std::string name_;
         std::mutex lock_;
         std::vector<_Tp, _Allocator> store_;

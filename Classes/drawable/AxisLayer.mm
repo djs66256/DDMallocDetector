@@ -17,7 +17,7 @@ namespace MD {
     }
     
     void XAxisLayer::Draw() {
-        getAnchors()->Prepare();
+//        getAnchors()->Prepare();
         auto ctx = canvas()->context();
         auto r = absoluteFrame();
         
@@ -30,32 +30,55 @@ namespace MD {
         CGContextSetStrokeColor(ctx, color());
         CGContextStrokePath(ctx);
         
-        if (getAnchors()->hasValue()) {
+        if (anchors()->count()) {
             // stroke anchor
-            std::size_t idx = 0;
-            std::for_each(anchors().begin(), anchors().end(), [&](auto& i) {
-                Float x = r.left() + r.width() * idx / (anchors().count() - 1);
+            for (int i = 0; i < anchors()->count(); ++i) {
+                Float x = r.left() + r.width() * anchors()->positionAt(i);
+                
                 CGContextMoveToPoint(ctx, x, r.bottom());
                 CGContextAddLineToPoint(ctx, x, r.bottom() + 3);
                 CGContextStrokePath(ctx);
                 
                 NSString *text = nullptr;
-                if (anchors().formatter()) {
-                    const char *str = anchors().formatter()(i).c_str();
-                    if (str) {
-                        text = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
-                    }
-                    else {
-                        text = @"";
-                    }
+                std::string str = anchors()->nameAt(i);
+                if (str.size()) {
+                    text = [NSString stringWithCString:str.c_str() encoding:NSUTF8StringEncoding];
                 }
                 else {
-                    text = [NSString stringWithFormat:@"%d", (int)i];
+                    text = @"";
                 }
-                [text drawAtPoint:CGPointMake(x - 10, r.bottom() + 5)
-                   withAttributes:@{ NSForegroundColorAttributeName: UIColorFrom(textColor()) }];
-                ++idx;
-            });
+                
+                [text drawInRect:CGRectMake(x - 8, r.bottom() + 8, 20*2, 14)
+                  withAttributes:@{
+                                   NSForegroundColorAttributeName: UIColorFrom(textColor()),
+                                   NSFontAttributeName: [UIFont systemFontOfSize:12],
+//                                   NSattname: @(NSTextAlignmentCenter)
+                                   }];
+            }
+//            std::size_t idx = 0;
+//            std::for_each(anchors().begin(), anchors().end(), [&](auto& i) {
+//                Float x = r.left() + r.width() * idx / (anchors().count() - 1);
+//                CGContextMoveToPoint(ctx, x, r.bottom());
+//                CGContextAddLineToPoint(ctx, x, r.bottom() + 3);
+//                CGContextStrokePath(ctx);
+//
+//                NSString *text = nullptr;
+//                if (anchors().formatter()) {
+//                    const char *str = anchors().formatter()(i).c_str();
+//                    if (str) {
+//                        text = [NSString stringWithCString:str encoding:NSUTF8StringEncoding];
+//                    }
+//                    else {
+//                        text = @"";
+//                    }
+//                }
+//                else {
+//                    text = [NSString stringWithFormat:@"%d", (int)i];
+//                }
+//                [text drawAtPoint:CGPointMake(x - 10, r.bottom() + 5)
+//                   withAttributes:@{ NSForegroundColorAttributeName: UIColorFrom(textColor()) }];
+//                ++idx;
+//            });
         }
         
         // stroke triangle
@@ -81,7 +104,6 @@ namespace MD {
     }
     
     void YAxisLayer::Draw() {
-        getAnchors()->Prepare();
         auto ctx = canvas()->context();
         auto r = absoluteFrame();
         
@@ -95,6 +117,33 @@ namespace MD {
         CGContextStrokePath(ctx);
         
         // stroke anchor
+        if (anchors()->count()) {
+            // stroke anchor
+            for (int i = 0; i < anchors()->count(); ++i) {
+                Float y = r.bottom() - r.height() * anchors()->positionAt(i);
+                
+                CGContextMoveToPoint(ctx, r.left(), y);
+                CGContextAddLineToPoint(ctx, r.left() - 3, y);
+                CGContextStrokePath(ctx);
+                
+                NSString *text = nullptr;
+                std::string str = anchors()->nameAt(i);
+                if (str.size()) {
+                    text = [NSString stringWithCString:str.c_str() encoding:NSUTF8StringEncoding];
+                }
+                else {
+                    text = @"";
+                }
+                
+                [text drawInRect:CGRectMake(0, y - 8, r.left(), 14)
+                  withAttributes:@{
+                                   NSForegroundColorAttributeName: UIColorFrom(textColor()),
+                                   NSFontAttributeName: [UIFont systemFontOfSize:12],
+//                                   NSTextAlignment: @(NSTextAlignmentCenter)
+                                   }];
+            }
+        }
+        /*
         std::size_t idx = 0;
         std::for_each(anchors().begin(), anchors().end(), [&](auto& i) {
             Float y = r.bottom() - r.height() * idx / (anchors().count() - 1);
@@ -118,7 +167,7 @@ namespace MD {
             [text drawAtPoint:CGPointMake(r.left() - 20, y - 8)
                withAttributes:@{ NSForegroundColorAttributeName: UIColorFrom(textColor()) }];
             ++idx;
-        });
+        });*/
         
         // stroke triangle
         CGContextMoveToPoint(ctx, r.left(), r.top() - triangleHeight());

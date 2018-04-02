@@ -19,8 +19,12 @@
 		65064D07207122C6006D207E /* MDControlViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D03207122C6006D207E /* MDControlViewController.mm */; };
 		65064D08207122C6006D207E /* MDGraphViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D05207122C6006D207E /* MDGraphViewController.mm */; };
 		65064D0B20713632006D207E /* AnalysisBySize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064D0920713632006D207E /* AnalysisBySize.cpp */; };
-		65064D0E20714161006D207E /* MDBySizeGraphViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D0D20714161006D207E /* MDBySizeGraphViewController.mm */; };
 		65064D112071496D006D207E /* MDBySizeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D102071496D006D207E /* MDBySizeView.mm */; };
+		BE73E4B72071ECBD00F28718 /* MDBySizeGraphViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4B62071ECBD00F28718 /* MDBySizeGraphViewController.mm */; };
+		BE73E4BA2071EDB400F28718 /* MDBySizeGroupTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4B92071EDB400F28718 /* MDBySizeGroupTableViewController.mm */; };
+		BE73E4BD2071F02800F28718 /* MDAnalysisGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.m */; };
+		BE73E4C12071F2F000F28718 /* convertor.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4BF2071F2F000F28718 /* convertor.mm */; };
+		BE7F01DF207208CD009C46E9 /* AxisAnchors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE7F01DD207208CD009C46E9 /* AxisAnchors.cpp */; };
 		BE8C5845206E6D1500D81AE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5844206E6D1500D81AE6 /* AppDelegate.m */; };
 		BE8C5848206E6D1500D81AE6 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5847206E6D1500D81AE6 /* ViewController.mm */; };
 		BE8C584B206E6D1500D81AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8C5849206E6D1500D81AE6 /* Main.storyboard */; };
@@ -69,11 +73,19 @@
 		65064D06207122C6006D207E /* MDControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDControlViewController.h; sourceTree = "<group>"; };
 		65064D0920713632006D207E /* AnalysisBySize.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnalysisBySize.cpp; sourceTree = "<group>"; };
 		65064D0A20713632006D207E /* AnalysisBySize.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnalysisBySize.hpp; sourceTree = "<group>"; };
-		65064D0C20714161006D207E /* MDBySizeGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeGraphViewController.h; sourceTree = "<group>"; };
-		65064D0D20714161006D207E /* MDBySizeGraphViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeGraphViewController.mm; sourceTree = "<group>"; };
 		65064D0F2071496D006D207E /* MDBySizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeView.h; sourceTree = "<group>"; };
 		65064D102071496D006D207E /* MDBySizeView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeView.mm; sourceTree = "<group>"; };
+		BE73E4B52071ECBD00F28718 /* MDBySizeGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBySizeGraphViewController.h; sourceTree = "<group>"; };
+		BE73E4B62071ECBD00F28718 /* MDBySizeGraphViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeGraphViewController.mm; sourceTree = "<group>"; };
+		BE73E4B82071EDB400F28718 /* MDBySizeGroupTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeGroupTableViewController.h; sourceTree = "<group>"; };
+		BE73E4B92071EDB400F28718 /* MDBySizeGroupTableViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeGroupTableViewController.mm; sourceTree = "<group>"; };
+		BE73E4BB2071F02800F28718 /* MDAnalysisGroupTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAnalysisGroupTableViewController.h; sourceTree = "<group>"; };
+		BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAnalysisGroupTableViewController.m; sourceTree = "<group>"; };
+		BE73E4BF2071F2F000F28718 /* convertor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = convertor.mm; sourceTree = "<group>"; };
+		BE73E4C02071F2F000F28718 /* convertor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = convertor.h; sourceTree = "<group>"; };
 		BE761A732070B2CA001C8249 /* Normalize.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Normalize.hpp; sourceTree = "<group>"; };
+		BE7F01DD207208CD009C46E9 /* AxisAnchors.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AxisAnchors.cpp; sourceTree = "<group>"; };
+		BE7F01DE207208CD009C46E9 /* AxisAnchors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AxisAnchors.hpp; sourceTree = "<group>"; };
 		BE8C5840206E6D1500D81AE6 /* DDMallocDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDMallocDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8C5843206E6D1500D81AE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE8C5844206E6D1500D81AE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -209,14 +221,35 @@
 		65064D02207122C6006D207E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BE73E4B42071ECBD00F28718 /* BySize */,
 				65064D06207122C6006D207E /* MDControlViewController.h */,
 				65064D03207122C6006D207E /* MDControlViewController.mm */,
-				65064D0C20714161006D207E /* MDBySizeGraphViewController.h */,
-				65064D0D20714161006D207E /* MDBySizeGraphViewController.mm */,
+				BE73E4BB2071F02800F28718 /* MDAnalysisGroupTableViewController.h */,
+				BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.m */,
 				65064D04207122C6006D207E /* MDGraphViewController.h */,
 				65064D05207122C6006D207E /* MDGraphViewController.mm */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE73E4B42071ECBD00F28718 /* BySize */ = {
+			isa = PBXGroup;
+			children = (
+				BE73E4B52071ECBD00F28718 /* MDBySizeGraphViewController.h */,
+				BE73E4B62071ECBD00F28718 /* MDBySizeGraphViewController.mm */,
+				BE73E4B82071EDB400F28718 /* MDBySizeGroupTableViewController.h */,
+				BE73E4B92071EDB400F28718 /* MDBySizeGroupTableViewController.mm */,
+			);
+			path = BySize;
+			sourceTree = "<group>";
+		};
+		BE73E4BE2071F2CD00F28718 /* objcpp */ = {
+			isa = PBXGroup;
+			children = (
+				BE73E4BF2071F2F000F28718 /* convertor.mm */,
+				BE73E4C02071F2F000F28718 /* convertor.h */,
+			);
+			path = objcpp;
 			sourceTree = "<group>";
 		};
 		BE8C5837206E6D1500D81AE6 = {
@@ -284,6 +317,8 @@
 				BE8C5867206E6D4800D81AE6 /* StrokeLayer.cpp */,
 				BE8C5868206E6D4800D81AE6 /* StrokeLayer.hpp */,
 				65064CFA206FBBA8006D207E /* StrokeLayerHelper.hpp */,
+				BE7F01DD207208CD009C46E9 /* AxisAnchors.cpp */,
+				BE7F01DE207208CD009C46E9 /* AxisAnchors.hpp */,
 			);
 			path = drawable;
 			sourceTree = "<group>";
@@ -291,6 +326,7 @@
 		BE8C587A206E6D4800D81AE6 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				BE73E4BE2071F2CD00F28718 /* objcpp */,
 				65064D02207122C6006D207E /* Controller */,
 				65064CD9206E9C17006D207E /* control */,
 				65064CDA206E9C3E006D207E /* graph */,
@@ -378,6 +414,7 @@
 				65064D0B20713632006D207E /* AnalysisBySize.cpp in Sources */,
 				BE8C5881206E6D4800D81AE6 /* FillLayer.cpp in Sources */,
 				BE8C588C206E6D4800D81AE6 /* MDStatisticsView.mm in Sources */,
+				BE73E4BD2071F02800F28718 /* MDAnalysisGroupTableViewController.m in Sources */,
 				BE8C588A206E6D4800D81AE6 /* ThreadLocal.cpp in Sources */,
 				65064CD7206E9909006D207E /* MDInspectorWindow.mm in Sources */,
 				65064CED206EA802006D207E /* DDMallocDetector.cpp in Sources */,
@@ -388,15 +425,18 @@
 				BE8C587F206E6D4800D81AE6 /* AxisLayer.mm in Sources */,
 				65064D07207122C6006D207E /* MDControlViewController.mm in Sources */,
 				BE8C588B206E6D4800D81AE6 /* MDDrawableView.mm in Sources */,
+				BE73E4BA2071EDB400F28718 /* MDBySizeGroupTableViewController.mm in Sources */,
 				BE8C5885206E6D4800D81AE6 /* MallocCollectorHelper.cpp in Sources */,
+				BE7F01DF207208CD009C46E9 /* AxisAnchors.cpp in Sources */,
 				BE8C5883206E6D4800D81AE6 /* StrokeLayer.cpp in Sources */,
+				BE73E4B72071ECBD00F28718 /* MDBySizeGraphViewController.mm in Sources */,
 				BE8C5889206E6D4800D81AE6 /* MemoryDetector.cpp in Sources */,
 				BE8C5886206E6D4800D81AE6 /* MallocPool.cpp in Sources */,
 				BE8C5884206E6D4800D81AE6 /* MallocCollector.cpp in Sources */,
 				65064CFD206FCC8F006D207E /* AnalysisTaskRunner.cpp in Sources */,
 				BE8C5887206E6D4800D81AE6 /* MallocWrapZone.cpp in Sources */,
 				BE8C5882206E6D4800D81AE6 /* Layer.cpp in Sources */,
-				65064D0E20714161006D207E /* MDBySizeGraphViewController.mm in Sources */,
+				BE73E4C12071F2F000F28718 /* convertor.mm in Sources */,
 				65064CDD206E9C9C006D207E /* MDInspectorIcon.m in Sources */,
 				65064CF0206EA94E006D207E /* DataOverflowOberser.cpp in Sources */,
 				BE8C5845206E6D1500D81AE6 /* AppDelegate.m in Sources */,

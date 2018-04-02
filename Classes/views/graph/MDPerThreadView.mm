@@ -35,23 +35,23 @@ typedef MD::PairStrokeLayer<time_t, std::size_t> TimeSizeLayer;
         _contentLayer->setEdges(MD::Edges(20, 100, 20, 100));
         _contentLayer->setBackgroundColor({0.2, 0.2, 0.2});
         
-        _yAxis->anchors().setFormatter([](auto f) {
-            std::strstream s;
-            s << "2^" << f;
-            return s.str();
-        });
-        
-        __weak typeof(self) weakSelf = self;
-        _xAxis->anchors().setFormatter([weakSelf](auto f) -> const char* {
-            if (weakSelf) {
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                double min = strongSelf->_minX;
-                std::strstream s;
-                s << int((f - min)/1000);
-                return s.str();
-            }
-            return "";
-        });
+//        _yAxis->anchors().setFormatter([](auto f) {
+//            std::strstream s;
+//            s << "2^" << f;
+//            return s.str();
+//        });
+//
+//        __weak typeof(self) weakSelf = self;
+//        _xAxis->anchors().setFormatter([weakSelf](auto f) -> const char* {
+//            if (weakSelf) {
+//                __strong typeof(weakSelf) strongSelf = weakSelf;
+//                double min = strongSelf->_minX;
+//                std::strstream s;
+//                s << int((f - min)/1000);
+//                return s.str();
+//            }
+//            return "";
+//        });
     }
     return self;
 }
@@ -64,8 +64,8 @@ typedef MD::PairStrokeLayer<time_t, std::size_t> TimeSizeLayer;
         _lineLayer->setYRange({CGFloat(data.min.second), CGFloat(data.max.second)});
         _minX = data.min.first;
         
-        _xAxis->setRange(data.min.first, data.max.first);
-        _yAxis->setRange(data.min.second, data.max.second);
+//        _xAxis->setRange(data.min.first, data.max.first);
+//        _yAxis->setRange(data.min.second, data.max.second);
         [self setNeedsRebuildCanvas];
     }
 }

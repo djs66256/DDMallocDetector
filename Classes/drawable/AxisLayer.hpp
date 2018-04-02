@@ -14,14 +14,16 @@
 #include <cmath>
 #include <functional>
 #include "Layer.hpp"
+#include "AxisAnchors.hpp"
 
 namespace MD {
+    
     
     class AxisLayer : public Layer {
     public:
         AxisLayer() = default;
         AxisLayer(std::string&& name) : name_(name) {}
-        
+        /*
         class Anchors {
         public:
             class Iterator {
@@ -44,19 +46,21 @@ namespace MD {
             };
             
             void Prepare() {
-                if (max_ > min_ && max_count_ > 0) {
-                    Float delta = delta_;
-                    count_ = fabs(floor((max_ - min_) / delta_)) + 1;
-                    while (count_ > max_count_) {
-                        delta *= 2;
-                        count_ = fabs(ceil((max_ - min_) / delta));
-                    }
-                    real_delta_ = delta;
-                    // 1 point is just zero.
-                    if (count_ == 1) {
-                        real_delta_ = 0;
-                        count_ = 0;
-                    }
+                if (max_ > min_ && max_count_ > 1) {
+                    real_delta_ = (max_ - min_) / (max_count_ - 1);
+                    count_ = max_count_;
+//                    Float delta = delta_;
+//                    count_ = fabs(floor((max_ - min_) / delta_)) + 1;
+//                    while (count_ > max_count_) {
+//                        delta *= 2;
+//                        count_ = fabs(ceil((max_ - min_) / delta));
+//                    }
+//                    real_delta_ = delta;
+//                    // 1 point is just zero.
+//                    if (count_ == 1) {
+//                        real_delta_ = 0;
+//                        count_ = 0;
+//                    }
                 }
                 else {
                     real_delta_ = 0;
@@ -102,13 +106,14 @@ namespace MD {
             int count_ = 0;
             Float real_delta_ = 0;
             formatter_type formatter_;
-        };
+        };*/
         
-        void setRange(Float min, Float max) { anchors_.setMin(min); anchors_.setMax(max); }
-        Float min() { return anchors_.min(); }
-        Float max() { return anchors_.max(); }
-        Anchors& anchors() { return anchors_; }
-        Anchors* getAnchors() { return &anchors_; }
+//        void setRange(Float min, Float max) { anchors_.setMin(min); anchors_.setMax(max); }
+//        Float min() { return anchors_.min(); }
+//        Float max() { return anchors_.max(); }
+        std::shared_ptr<Anchors> anchors() { return anchors_; }
+        void setAnchors(std::shared_ptr<Anchors> anchors) { anchors_ = anchors; }
+        // Anchors* getAnchors() { return &anchors_; }
         
         void setName(std::string&& name) { name_ = name; }
         const std::string& name() const { return name_; }
@@ -130,7 +135,7 @@ namespace MD {
         std::string name_;
         Color text_color_;
         Color color_;
-        Anchors anchors_;
+        std::shared_ptr<Anchors> anchors_;
     };
     
     class XAxisLayer : public AxisLayer {

@@ -17,7 +17,7 @@
 
 namespace MD {
     
-    template <std::size_t _Step = 2, std::size_t _Start = 8>
+    template <std::size_t _Step = 2, std::size_t _Start = 1>
     struct StepByLog {
         static_assert(_Step >= 2, "");
         static_assert(_Start >= 1, "");
@@ -27,11 +27,10 @@ namespace MD {
             std::size_t value = _Start;
             while(value < min) value *= _Step;
             steps.push_back(value);
-            while(value <= max) {
+            do {
                 value *= _Step;
                 steps.push_back(value);
-            }
-            steps.push_back(ULONG_MAX);
+            } while (value <= max);
             return steps;
         }
     };
@@ -46,6 +45,7 @@ namespace MD {
         
         struct ThreadInfo {
             list_type_ptr list;
+            std::string name;
             
         private:
             friend class AnalysisBySize;
@@ -70,7 +70,6 @@ namespace MD {
         
         AnalysisBySize(std::size_t min, std::size_t max)
         : min_(std::max(std::size_t(1), min)), max_(max), step_value_(_S()(min_, max_)) {
-            std::max(1, 2);
         }
         
         std::shared_ptr<thread_info_list_type> data() {
@@ -98,6 +97,7 @@ namespace MD {
     void AnalysisBySize<_S>::Run() {
         auto func = [&](auto s) {
             ThreadInfo threadInfo;
+            threadInfo.name = s->name();
             threadInfo.list = MakeEmptyList();
             std::for_each(s->data().begin(), s->data().end(), [&](auto& mem) {
                 threadInfo.count(mem.size);

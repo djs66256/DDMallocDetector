@@ -45,10 +45,15 @@ namespace MD {
         
         struct Constructor {
             MemoryStorage* operator()() {
-                auto p = new MemoryStorage();
+                pthread_t pid = pthread_self();
+                auto p = new MemoryStorage(pid);
+                
+                if (pthread_main_np()) {
+                    p->setMainThread();
+                }
                 
                 char buf[128] = {0};
-                pthread_getname_np(pthread_self(), buf, sizeof(buf));
+                pthread_getname_np(pid, buf, sizeof(buf));
                 VMAllocator<char> allocator;
                 std::string thread_name(buf, allocator);
                 p->setName(std::move(thread_name));

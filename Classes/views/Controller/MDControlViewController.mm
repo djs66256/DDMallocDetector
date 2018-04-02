@@ -10,7 +10,7 @@
 #import "MDGraphViewController.h"
 #import "MDInspectorIcon.h"
 #import "MemoryDetector.hpp"
-#import "MDBySizeGraphViewController.h"
+#import "MDAnalysisGroupTableViewController.h"
 
 @interface MDControlViewController ()
 @property (nonatomic, strong) MDInspectorIcon *icon;
@@ -41,7 +41,7 @@
         MD::MemoryDetector::GetInstance()->Stop();
     }
     
-    MDBySizeGraphViewController *vc = [MDBySizeGraphViewController new];
+    MDAnalysisGroupTableViewController *vc = [MDAnalysisGroupTableViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
