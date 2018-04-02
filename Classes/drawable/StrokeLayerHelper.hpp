@@ -49,6 +49,7 @@ namespace MD {
         Float x_ = 0;
     };
     
+    // x以真实值位置排布
     template<class _V = std::pair<class _T1, class _T2>>
     struct PairLocation final {
     public:
@@ -70,6 +71,7 @@ namespace MD {
         FloatRange yRange_;
     };
     
+    // x以线性排布
     template<class _V = std::pair<class _T1, class _T2>>
     struct PairLinearLocation final {
     public:

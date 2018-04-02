@@ -8,10 +8,12 @@
 
 #import "MDBySizeGroupTableViewController.h"
 #import "MDBySizeGraphViewController.h"
+#import "MDBySizeGenerateTableViewController.h"
 #include "../../../analysis/AnalysisBySize.hpp"
 
 @interface MDBySizeGroupTableViewController () {
     std::shared_ptr<MD::AnalysisBySize<>::thread_info_list_type> _data;
+    std::shared_ptr<MD::AnalysisBySize<>::list_type> _allData;
 }
 
 @end
@@ -28,6 +30,18 @@
         
         auto data = a.data();
         _data = data;
+        
+        _allData = std::make_shared<MD::AnalysisBySize<>::list_type>();
+        
+        std::for_each(data->begin(), data->end(), [&](auto& threadInfo) {
+            for (int i = 0; i < threadInfo.list->size(); ++i) {
+                auto& p = threadInfo.list->at(i);
+                if (i >= _allData->size()) {
+                    _allData->push_back(std::pair<std::size_t, std::size_t>(p.first, 0));
+                }
+                _allData->at(i).second += p.second;
+            }
+        });
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            auto line = data->at(0).list;
@@ -81,7 +95,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 2) {
+    if (indexPath.section == 0) {
+        MDBySizeGenerateTableViewController *vc = [MDBySizeGenerateTableViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.section == 1) {
+        MDBySizeGraphViewController *vc = [MDBySizeGraphViewController new];
+        [vc setData:_allData];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.section == 2) {
         MDBySizeGraphViewController *vc = [MDBySizeGraphViewController new];
         [vc setData:_data->at(indexPath.row).list];
         [self.navigationController pushViewController:vc animated:YES];

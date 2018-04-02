@@ -32,18 +32,11 @@ typedef std::shared_ptr<BySizeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
         _strokeLayer->setEdges(MD::Edges(20, 100, 20, 100));
         _strokeLayer->setColor(1, 0, 0);
         
-        _contentLayer->setEdges(MD::Edges(20, 100, 20, 100));
-        _contentLayer->setBackgroundColor({0.8, 0.8, 0.8});
-        
         _xAxis->setName("Size");
-        _xAxis->setEdges(MD::Edges(20, 100, 20, 100));
-        
-        
-        _yAxis->setName("Count");
-        _yAxis->setEdges(MD::Edges(20, 100, 20, 100));
+        _yAxis->setName("Count / K");
         
         _xAnchors = std::make_shared<BySizeDiscreteAnchors>();
-        _xAnchors->setMaxCount(10);
+        _xAnchors->setMaxCount(16);
         _xAnchors->setFormatter([](auto& v) {
             std::strstream s;
             if (v.first >= 1024 * 1024) {
@@ -66,7 +59,7 @@ typedef std::shared_ptr<BySizeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
                 return "0";
             }
             std::strstream s;
-            s << std::setprecision(1) << std::fixed << f/1000 << "k";
+            s << std::setprecision(1) << std::fixed << f/1000;
             return s.str();
         });
         _yAxis->setAnchors(_yAnchors);
@@ -86,14 +79,9 @@ typedef std::shared_ptr<BySizeDiscreteAnchors> BySizeDiscreteAnchorsPtr;
     _strokeLayer->setYRange(min, max);
     _strokeLayer->setXRange(0, ULONG_MAX);
     
-//    auto anchors = std::make_shared<std::vector<std::size_t>>();
-//    std::for_each(list->begin(), list->end(), [&](auto& i) {
-//        anchors->push_back(i.first);
-//    });
     _xAnchors->setPoints(list);
     
     _yAnchors->setRange(min, max);
-//    _yAxis->setRange(min, max);
     
     [self setNeedsRebuildCanvas];
 }

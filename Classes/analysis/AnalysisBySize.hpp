@@ -14,29 +14,12 @@
 #include <map>
 #include <algorithm>
 #include "AnalysisTask.hpp"
+#include "AnalysisHelper.h"
 
 namespace MD {
     
-    template <std::size_t _Step = 2, std::size_t _Start = 1>
-    struct StepByLog {
-        static_assert(_Step >= 2, "");
-        static_assert(_Start >= 1, "");
-        
-        std::vector<std::size_t> operator()(std::size_t min, std::size_t max) {
-            std::vector<std::size_t> steps;
-            std::size_t value = _Start;
-            while(value < min) value *= _Step;
-            steps.push_back(value);
-            do {
-                value *= _Step;
-                steps.push_back(value);
-            } while (value <= max);
-            return steps;
-        }
-    };
-    
     template<class _S = StepByLog<>>
-    class AnalysisBySize : public AnalysisTask {
+    class AnalysisBySize final : public AnalysisTask {
     public:
         // <size, count>
         typedef std::pair<std::size_t, std::size_t> item_type;
@@ -50,18 +33,11 @@ namespace MD {
         private:
             friend class AnalysisBySize;
             void count(std::size_t size) {
-                auto prev = list->end();
+                auto prev = list->begin();
                 for (auto i = list->begin(); i != list->end(); prev = i, ++i) {
                     if (size < (*i).first) {
-                        if (prev != list->end()) {
-                            ++((*prev).second);
-                            break;
-                        }
-                        else {
-                            // first
-                            ++((*i).second);
-                            break;
-                        }
+                        (*prev).second += 1;
+                        break;
                     }
                 }
             }

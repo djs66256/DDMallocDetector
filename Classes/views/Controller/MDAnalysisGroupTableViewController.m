@@ -8,6 +8,7 @@
 
 #import "MDAnalysisGroupTableViewController.h"
 #import "MDBySizeGroupTableViewController.h"
+#import "MDByTimeGroupTableViewController.h"
 
 @interface MDAnalysisGroupTableViewController ()
 @property (nonatomic, strong) NSArray *data;
@@ -22,7 +23,11 @@
     self.data = @[@{
                       @"class": MDBySizeGroupTableViewController.class,
                       @"title": @"大小分析"
-                    }];
+                    },
+                  @{
+                      @"class": MDByTimeGroupTableViewController.class,
+                      @"title": @"时间分析"
+                      }];
 }
 
 - (void)didReceiveMemoryWarning {

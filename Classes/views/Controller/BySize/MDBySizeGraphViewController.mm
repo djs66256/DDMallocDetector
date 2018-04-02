@@ -13,6 +13,7 @@
 
 @interface MDBySizeGraphViewController () {
     MDBySizeGraphViewControllerData _data;
+    std::size_t _maxY;
 }
 
 @property (nonatomic, strong) MDBySizeView *graphView;
@@ -26,7 +27,7 @@
     self.graphView = [[MDBySizeView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.graphView];
     
-    [self.graphView setList:_data minCount:0 maxCount:5000];
+    [self.graphView setList:_data minCount:0 maxCount:_maxY];
     [self.graphView rebuildCanvasIfNeeded];
 }
 
@@ -38,9 +39,16 @@
 
 - (void)setData:(MDBySizeGraphViewControllerData)data {
     _data = data;
+    
+    std::size_t max = 0;
+    std::for_each(_data->begin(), _data->end(), [&](auto& p) {
+        max = std::max(max, p.second);
+    });
+    _maxY = ceil(double(max) / 1000) * 1000;
+    
     [self printData];
     if (self.graphView) {
-        [self.graphView setList:_data minCount:0 maxCount:5000];
+        [self.graphView setList:_data minCount:0 maxCount:_maxY];
         [self.graphView rebuildCanvasIfNeeded];
     }
 }

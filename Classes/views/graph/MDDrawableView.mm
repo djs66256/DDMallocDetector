@@ -29,6 +29,17 @@
         
         _canvas = std::make_shared<MD::CanvasLayer>();
         _canvas->setBackgroundColor({ 1, 1, 1, 1 });
+        
+        _contentLayer->setEdges(MD::Edges(20, 100, 20, 100));
+        _contentLayer->setBackgroundColor({0.9, 0.9, 0.9});
+        
+        
+        _xAxis->setName("X");
+        _xAxis->setEdges(MD::Edges(20, 100, 20, 100));
+        
+        
+        _yAxis->setName("Y");
+        _yAxis->setEdges(MD::Edges(20, 100, 20, 100));
     }
     return self;
 }

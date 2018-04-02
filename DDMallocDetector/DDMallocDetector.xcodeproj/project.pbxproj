@@ -10,16 +10,19 @@
 		65064CD7206E9909006D207E /* MDInspectorWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064CD6206E9909006D207E /* MDInspectorWindow.mm */; };
 		65064CDD206E9C9C006D207E /* MDInspectorIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 65064CDC206E9C9C006D207E /* MDInspectorIcon.m */; };
 		65064CED206EA802006D207E /* DDMallocDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064CEB206EA802006D207E /* DDMallocDetector.cpp */; };
-		65064CF0206EA94E006D207E /* DataOverflowOberser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064CEE206EA94E006D207E /* DataOverflowOberser.cpp */; };
-		65064CF3206EA9DF006D207E /* DataAnalysisCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064CF1206EA9DF006D207E /* DataAnalysisCenter.cpp */; };
 		65064CF6206F76B3006D207E /* AnalysisPerThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064CF4206F76B3006D207E /* AnalysisPerThread.cpp */; };
 		65064CF9206F78C5006D207E /* AnalysisTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064CF7206F78C5006D207E /* AnalysisTask.cpp */; };
-		65064CFD206FCC8F006D207E /* AnalysisTaskRunner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064CFB206FCC8F006D207E /* AnalysisTaskRunner.cpp */; };
 		65064D00206FFA19006D207E /* MDPerThreadView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064CFF206FFA19006D207E /* MDPerThreadView.mm */; };
 		65064D07207122C6006D207E /* MDControlViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D03207122C6006D207E /* MDControlViewController.mm */; };
 		65064D08207122C6006D207E /* MDGraphViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D05207122C6006D207E /* MDGraphViewController.mm */; };
 		65064D0B20713632006D207E /* AnalysisBySize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064D0920713632006D207E /* AnalysisBySize.cpp */; };
 		65064D112071496D006D207E /* MDBySizeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D102071496D006D207E /* MDBySizeView.mm */; };
+		65064D1420727579006D207E /* MDBySizeGenerateTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D1320727579006D207E /* MDBySizeGenerateTableViewController.mm */; };
+		65064D18207276C7006D207E /* MDByTimeGroupTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D17207276C7006D207E /* MDByTimeGroupTableViewController.mm */; };
+		65064D1B207276DA006D207E /* MDByTimeGraphViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D1A207276DA006D207E /* MDByTimeGraphViewController.mm */; };
+		65064D1E207276F3006D207E /* MDByTimeGenerateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65064D1D207276F3006D207E /* MDByTimeGenerateTableViewController.m */; };
+		65064D2120727743006D207E /* MDByTimeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D2020727743006D207E /* MDByTimeView.mm */; };
+		65064D2420728321006D207E /* AnalysisByTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064D2220728321006D207E /* AnalysisByTime.cpp */; };
 		BE73E4B72071ECBD00F28718 /* MDBySizeGraphViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4B62071ECBD00F28718 /* MDBySizeGraphViewController.mm */; };
 		BE73E4BA2071EDB400F28718 /* MDBySizeGroupTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4B92071EDB400F28718 /* MDBySizeGroupTableViewController.mm */; };
 		BE73E4BD2071F02800F28718 /* MDAnalysisGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.m */; };
@@ -54,17 +57,11 @@
 		65064CDC206E9C9C006D207E /* MDInspectorIcon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDInspectorIcon.m; sourceTree = "<group>"; };
 		65064CEB206EA802006D207E /* DDMallocDetector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DDMallocDetector.cpp; sourceTree = "<group>"; };
 		65064CEC206EA802006D207E /* DDMallocDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDMallocDetector.h; sourceTree = "<group>"; };
-		65064CEE206EA94E006D207E /* DataOverflowOberser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataOverflowOberser.cpp; sourceTree = "<group>"; };
-		65064CEF206EA94E006D207E /* DataOverflowOberser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DataOverflowOberser.hpp; sourceTree = "<group>"; };
-		65064CF1206EA9DF006D207E /* DataAnalysisCenter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataAnalysisCenter.cpp; sourceTree = "<group>"; };
-		65064CF2206EA9DF006D207E /* DataAnalysisCenter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DataAnalysisCenter.hpp; sourceTree = "<group>"; };
 		65064CF4206F76B3006D207E /* AnalysisPerThread.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnalysisPerThread.cpp; sourceTree = "<group>"; };
 		65064CF5206F76B3006D207E /* AnalysisPerThread.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnalysisPerThread.hpp; sourceTree = "<group>"; };
 		65064CF7206F78C5006D207E /* AnalysisTask.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnalysisTask.cpp; sourceTree = "<group>"; };
 		65064CF8206F78C5006D207E /* AnalysisTask.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnalysisTask.hpp; sourceTree = "<group>"; };
 		65064CFA206FBBA8006D207E /* StrokeLayerHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StrokeLayerHelper.hpp; sourceTree = "<group>"; };
-		65064CFB206FCC8F006D207E /* AnalysisTaskRunner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnalysisTaskRunner.cpp; sourceTree = "<group>"; };
-		65064CFC206FCC8F006D207E /* AnalysisTaskRunner.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnalysisTaskRunner.hpp; sourceTree = "<group>"; };
 		65064CFE206FFA19006D207E /* MDPerThreadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDPerThreadView.h; sourceTree = "<group>"; };
 		65064CFF206FFA19006D207E /* MDPerThreadView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDPerThreadView.mm; sourceTree = "<group>"; };
 		65064D03207122C6006D207E /* MDControlViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDControlViewController.mm; sourceTree = "<group>"; };
@@ -75,6 +72,19 @@
 		65064D0A20713632006D207E /* AnalysisBySize.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnalysisBySize.hpp; sourceTree = "<group>"; };
 		65064D0F2071496D006D207E /* MDBySizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeView.h; sourceTree = "<group>"; };
 		65064D102071496D006D207E /* MDBySizeView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeView.mm; sourceTree = "<group>"; };
+		65064D1220727579006D207E /* MDBySizeGenerateTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeGenerateTableViewController.h; sourceTree = "<group>"; };
+		65064D1320727579006D207E /* MDBySizeGenerateTableViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeGenerateTableViewController.mm; sourceTree = "<group>"; };
+		65064D16207276C7006D207E /* MDByTimeGroupTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDByTimeGroupTableViewController.h; sourceTree = "<group>"; };
+		65064D17207276C7006D207E /* MDByTimeGroupTableViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDByTimeGroupTableViewController.mm; sourceTree = "<group>"; };
+		65064D19207276DA006D207E /* MDByTimeGraphViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDByTimeGraphViewController.h; sourceTree = "<group>"; };
+		65064D1A207276DA006D207E /* MDByTimeGraphViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDByTimeGraphViewController.mm; sourceTree = "<group>"; };
+		65064D1C207276F3006D207E /* MDByTimeGenerateTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDByTimeGenerateTableViewController.h; sourceTree = "<group>"; };
+		65064D1D207276F3006D207E /* MDByTimeGenerateTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDByTimeGenerateTableViewController.m; sourceTree = "<group>"; };
+		65064D1F20727743006D207E /* MDByTimeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDByTimeView.h; sourceTree = "<group>"; };
+		65064D2020727743006D207E /* MDByTimeView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDByTimeView.mm; sourceTree = "<group>"; };
+		65064D2220728321006D207E /* AnalysisByTime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnalysisByTime.cpp; sourceTree = "<group>"; };
+		65064D2320728321006D207E /* AnalysisByTime.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AnalysisByTime.hpp; sourceTree = "<group>"; };
+		65064D2520729468006D207E /* AnalysisHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalysisHelper.h; sourceTree = "<group>"; };
 		BE73E4B52071ECBD00F28718 /* MDBySizeGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBySizeGraphViewController.h; sourceTree = "<group>"; };
 		BE73E4B62071ECBD00F28718 /* MDBySizeGraphViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeGraphViewController.mm; sourceTree = "<group>"; };
 		BE73E4B82071EDB400F28718 /* MDBySizeGroupTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeGroupTableViewController.h; sourceTree = "<group>"; };
@@ -164,6 +174,8 @@
 				65064CFF206FFA19006D207E /* MDPerThreadView.mm */,
 				65064D0F2071496D006D207E /* MDBySizeView.h */,
 				65064D102071496D006D207E /* MDBySizeView.mm */,
+				65064D1F20727743006D207E /* MDByTimeView.h */,
+				65064D2020727743006D207E /* MDByTimeView.mm */,
 			);
 			path = graph;
 			sourceTree = "<group>";
@@ -202,18 +214,15 @@
 		65064CEA206EA776006D207E /* analysis */ = {
 			isa = PBXGroup;
 			children = (
-				65064CEE206EA94E006D207E /* DataOverflowOberser.cpp */,
-				65064CEF206EA94E006D207E /* DataOverflowOberser.hpp */,
-				65064CF1206EA9DF006D207E /* DataAnalysisCenter.cpp */,
-				65064CF2206EA9DF006D207E /* DataAnalysisCenter.hpp */,
 				65064CF4206F76B3006D207E /* AnalysisPerThread.cpp */,
 				65064CF5206F76B3006D207E /* AnalysisPerThread.hpp */,
+				65064D2220728321006D207E /* AnalysisByTime.cpp */,
+				65064D2320728321006D207E /* AnalysisByTime.hpp */,
 				65064D0920713632006D207E /* AnalysisBySize.cpp */,
 				65064D0A20713632006D207E /* AnalysisBySize.hpp */,
 				65064CF7206F78C5006D207E /* AnalysisTask.cpp */,
 				65064CF8206F78C5006D207E /* AnalysisTask.hpp */,
-				65064CFB206FCC8F006D207E /* AnalysisTaskRunner.cpp */,
-				65064CFC206FCC8F006D207E /* AnalysisTaskRunner.hpp */,
+				65064D2520729468006D207E /* AnalysisHelper.h */,
 			);
 			path = analysis;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 		65064D02207122C6006D207E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				65064D15207276B5006D207E /* ByTime */,
 				BE73E4B42071ECBD00F28718 /* BySize */,
 				65064D06207122C6006D207E /* MDControlViewController.h */,
 				65064D03207122C6006D207E /* MDControlViewController.mm */,
@@ -232,11 +242,26 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		65064D15207276B5006D207E /* ByTime */ = {
+			isa = PBXGroup;
+			children = (
+				65064D16207276C7006D207E /* MDByTimeGroupTableViewController.h */,
+				65064D17207276C7006D207E /* MDByTimeGroupTableViewController.mm */,
+				65064D19207276DA006D207E /* MDByTimeGraphViewController.h */,
+				65064D1A207276DA006D207E /* MDByTimeGraphViewController.mm */,
+				65064D1C207276F3006D207E /* MDByTimeGenerateTableViewController.h */,
+				65064D1D207276F3006D207E /* MDByTimeGenerateTableViewController.m */,
+			);
+			path = ByTime;
+			sourceTree = "<group>";
+		};
 		BE73E4B42071ECBD00F28718 /* BySize */ = {
 			isa = PBXGroup;
 			children = (
 				BE73E4B52071ECBD00F28718 /* MDBySizeGraphViewController.h */,
 				BE73E4B62071ECBD00F28718 /* MDBySizeGraphViewController.mm */,
+				65064D1220727579006D207E /* MDBySizeGenerateTableViewController.h */,
+				65064D1320727579006D207E /* MDBySizeGenerateTableViewController.mm */,
 				BE73E4B82071EDB400F28718 /* MDBySizeGroupTableViewController.h */,
 				BE73E4B92071EDB400F28718 /* MDBySizeGroupTableViewController.mm */,
 			);
@@ -406,7 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65064CF3206EA9DF006D207E /* DataAnalysisCenter.cpp in Sources */,
+				65064D1E207276F3006D207E /* MDByTimeGenerateTableViewController.m in Sources */,
 				65064CF6206F76B3006D207E /* AnalysisPerThread.cpp in Sources */,
 				65064CF9206F78C5006D207E /* AnalysisTask.cpp in Sources */,
 				BE8C5880206E6D4800D81AE6 /* CanvasLayer.mm in Sources */,
@@ -414,9 +439,11 @@
 				65064D0B20713632006D207E /* AnalysisBySize.cpp in Sources */,
 				BE8C5881206E6D4800D81AE6 /* FillLayer.cpp in Sources */,
 				BE8C588C206E6D4800D81AE6 /* MDStatisticsView.mm in Sources */,
+				65064D18207276C7006D207E /* MDByTimeGroupTableViewController.mm in Sources */,
 				BE73E4BD2071F02800F28718 /* MDAnalysisGroupTableViewController.m in Sources */,
 				BE8C588A206E6D4800D81AE6 /* ThreadLocal.cpp in Sources */,
 				65064CD7206E9909006D207E /* MDInspectorWindow.mm in Sources */,
+				65064D2120727743006D207E /* MDByTimeView.mm in Sources */,
 				65064CED206EA802006D207E /* DDMallocDetector.cpp in Sources */,
 				65064D08207122C6006D207E /* MDGraphViewController.mm in Sources */,
 				65064D00206FFA19006D207E /* MDPerThreadView.mm in Sources */,
@@ -432,13 +459,14 @@
 				BE73E4B72071ECBD00F28718 /* MDBySizeGraphViewController.mm in Sources */,
 				BE8C5889206E6D4800D81AE6 /* MemoryDetector.cpp in Sources */,
 				BE8C5886206E6D4800D81AE6 /* MallocPool.cpp in Sources */,
+				65064D2420728321006D207E /* AnalysisByTime.cpp in Sources */,
 				BE8C5884206E6D4800D81AE6 /* MallocCollector.cpp in Sources */,
-				65064CFD206FCC8F006D207E /* AnalysisTaskRunner.cpp in Sources */,
 				BE8C5887206E6D4800D81AE6 /* MallocWrapZone.cpp in Sources */,
 				BE8C5882206E6D4800D81AE6 /* Layer.cpp in Sources */,
 				BE73E4C12071F2F000F28718 /* convertor.mm in Sources */,
+				65064D1420727579006D207E /* MDBySizeGenerateTableViewController.mm in Sources */,
 				65064CDD206E9C9C006D207E /* MDInspectorIcon.m in Sources */,
-				65064CF0206EA94E006D207E /* DataOverflowOberser.cpp in Sources */,
+				65064D1B207276DA006D207E /* MDByTimeGraphViewController.mm in Sources */,
 				BE8C5845206E6D1500D81AE6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
