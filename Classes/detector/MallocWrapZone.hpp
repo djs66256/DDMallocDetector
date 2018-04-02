@@ -71,26 +71,4 @@ namespace MD {
     
 }
 
-
-//class std::allocator<MallocWrapZone> {
-//public:
-//    pointer allocate(size_type __n, allocator<void>::const_pointer = 0) noexcept
-//    {
-//        size_type n = round_page(__n);
-//        vm_address_t addr;
-//        vm_allocate(mach_task_self(), &addr, n, PROT_WRITE|PROT_READ);
-//        return reinterpret_cast<pointer>(addr);
-//    }
-//    void deallocate(pointer __p, size_type __n) noexcept
-//    {
-//        size_type n = round_page(__n);
-//        vm_deallocate(mach_task_self(), reinterpret_cast<vm_address_t>(__p), n);
-//    }
-//};
-//std::allocator<MD::MallocWrapZones>::pointer
-//std::allocator<MD::MallocWrapZones>::allocate(size_type __n) {
-//    
-//    
-//}
-
 #endif /* MallocWrapZone_hpp */

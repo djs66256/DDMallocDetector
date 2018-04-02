@@ -34,7 +34,7 @@
             _data = data;
             _all_list = all_list;
         
-#if 1
+#if 0
             std::for_each(_data->begin(), _data->end(), [](auto& t) {
                 t.Print();
             });

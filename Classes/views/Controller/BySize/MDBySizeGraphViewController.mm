@@ -9,7 +9,6 @@
 #import "MDBySizeGraphViewController.h"
 #import "AnalysisBySize.hpp"
 #import "MDBySizeView.h"
-#import "convertor.h"
 
 @interface MDBySizeGraphViewController () {
     MDBySizeGraphViewControllerData _data;
