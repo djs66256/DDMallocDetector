@@ -15,6 +15,11 @@
 extern "C" {
 #endif
 
+    void malloc_detector_attach_zone(bool default_zone);
+    void malloc_detector_start();
+    void malloc_detector_stop();
+    bool malloc_detector_is_running();
+    void malloc_detector_show_inspector();
     
 #ifdef __cplusplus
 } // extern "C"

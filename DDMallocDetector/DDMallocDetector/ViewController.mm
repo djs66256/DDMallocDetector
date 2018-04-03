@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [MDInspectorWindow enable];
+//    [MDInspectorWindow enable];
 //
 //    self.statView = [[MDStatisticsView alloc] initWithFrame:self.view.bounds];
 //    [self.view addSubview:self.statView];
