@@ -21,10 +21,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _xAxis = std::make_shared<MD::XAxisLayer>();
+        _xAxis = [self makeXAxis];
         _xAxis->setTriangleHeight(10);
         _xAxis->setTextColor(0, 0, 0);
-        _yAxis = std::make_shared<MD::YAxisLayer>();
+        _yAxis = [self makeYAxis];
         _contentLayer = std::make_shared<MD::FillLayer>();
         
         _canvas = std::make_shared<MD::CanvasLayer>();
@@ -42,6 +42,14 @@
         _yAxis->setEdges(MD::Edges(20, 100, 20, 100));
     }
     return self;
+}
+
+- (std::shared_ptr<MD::AxisLayer>)makeXAxis {
+    return std::make_shared<MD::XAxisLayer<>>();
+}
+
+- (std::shared_ptr<MD::AxisLayer>)makeYAxis {
+    return std::make_shared<MD::YAxisLayer<>>();
 }
 
 - (const std::shared_ptr<MD::CanvasLayer>&)canvas {

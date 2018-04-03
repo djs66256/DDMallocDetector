@@ -13,8 +13,8 @@
 
 @interface MDDrawableView : UIView {
 @protected
-    std::shared_ptr<MD::XAxisLayer> _xAxis;
-    std::shared_ptr<MD::YAxisLayer> _yAxis;
+    std::shared_ptr<MD::AxisLayer> _xAxis;
+    std::shared_ptr<MD::AxisLayer> _yAxis;
     std::shared_ptr<MD::FillLayer> _contentLayer;
 }
 
@@ -23,5 +23,8 @@
 - (void)setNeedsRebuildCanvas;
 - (void)rebuildCanvasIfNeeded;
 - (void)rebuildCanvas NS_REQUIRES_SUPER;
+
+- (std::shared_ptr<MD::AxisLayer>)makeXAxis;
+- (std::shared_ptr<MD::AxisLayer>)makeYAxis;
 
 @end

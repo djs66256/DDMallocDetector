@@ -21,13 +21,13 @@
 namespace MD {
     class Anchors {
     public:
-        virtual std::size_t count() { return 0; }
-        virtual double positionAt(std::size_t idx) { return 0; } // return percentage
-        virtual std::string nameAt(std::size_t idx) { return std::string(); }
+        std::size_t count() { return 0; }
+        double positionAt(std::size_t idx) { return 0; } // return percentage
+        std::string nameAt(std::size_t idx) { return std::string(); }
     };
     
     template<class _T>
-    class LinearAnchors : public Anchors {
+    class LinearAnchors {
     public:
         typedef _T value_type;
         typedef std::function<std::string (double)> formatter_type;
@@ -39,9 +39,9 @@ namespace MD {
           assert(count > 1);
         }
         
-        std::size_t count() override { return count_; }
-        double positionAt(std::size_t idx) override { return double(idx) / (count_ - 1); }
-        std::string nameAt(std::size_t idx) override {
+        std::size_t count() { return count_; }
+        double positionAt(std::size_t idx) { return double(idx) / (count_ - 1); }
+        std::string nameAt(std::size_t idx) {
             if (formatter_) {
                 std::string name = formatter_(value_type(double(max_ - min_) / (count_ - 1) * idx));
                 return name;
@@ -69,7 +69,7 @@ namespace MD {
     };
     
     template<class _T>
-    class DiscreteAnchors : public Anchors {
+    class DiscreteAnchors {
     public:
         typedef _T value_type;
         typedef std::function<std::string (value_type&)> formatter_type;
@@ -89,9 +89,9 @@ namespace MD {
             UpdateDuration();
         }
 
-        std::size_t count() override { return display_count_; }
-        double positionAt(std::size_t idx) override { return double(idx) * duration_ / (points_->size() - 1); }
-        std::string nameAt(std::size_t idx) override {
+        std::size_t count() { return display_count_; }
+        double positionAt(std::size_t idx) { return double(idx) * duration_ / (points_->size() - 1); }
+        std::string nameAt(std::size_t idx) {
             if (formatter_) {
                 std::string name = formatter_(points_->at(idx * duration_));
                 return name;
