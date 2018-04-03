@@ -13,6 +13,7 @@
 #include <malloc/malloc.h>
 #include <vector>
 #include "Allocator.hpp"
+#include "../base/Macros.h"
 
 namespace MD {
     class MallocWrapZones {
@@ -54,8 +55,7 @@ namespace MD {
             malloc_zone_t orig_zone_;
         };
         
-        MallocWrapZones(MallocWrapZones &);
-        MallocWrapZones& operator= (MallocWrapZones &);
+        MD_NO_COPY_ASSIGN(MallocWrapZones);
         
         std::vector<MallocWrapZone>::iterator FindWrapZone(malloc_zone_t *z) {
             auto iz = std::find_if(wrap_zones_.begin(), wrap_zones_.end(), [z](MallocWrapZone& zone){

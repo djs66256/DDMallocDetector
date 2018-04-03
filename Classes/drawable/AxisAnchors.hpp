@@ -23,14 +23,14 @@ namespace MD {
     public:
         virtual std::size_t count() { return 0; }
         virtual double positionAt(std::size_t idx) { return 0; } // return percentage
-        virtual std::string&& nameAt(std::size_t idx) { return std::move(std::string()); }
+        virtual std::string nameAt(std::size_t idx) { return std::string(); }
     };
     
     template<class _T>
     class LinearAnchors : public Anchors {
     public:
         typedef _T value_type;
-        typedef std::function<std::string&& (double)> formatter_type;
+        typedef std::function<std::string (double)> formatter_type;
         
         LinearAnchors() {};
         LinearAnchors(value_type min, value_type max, int count) 
@@ -41,17 +41,17 @@ namespace MD {
         
         std::size_t count() override { return count_; }
         double positionAt(std::size_t idx) override { return double(idx) / (count_ - 1); }
-        std::string&& nameAt(std::size_t idx) override {
+        std::string nameAt(std::size_t idx) override {
             if (formatter_) {
                 std::string name = formatter_(value_type(double(max_ - min_) / (count_ - 1) * idx));
-                return std::move(name);
+                return name;
             }
             else {
                 std::string name;
                 std::strstream s;
                 s << idx;
                 s >> name;
-                return std::move(name);
+                return name;
             }
         }
         
@@ -72,7 +72,7 @@ namespace MD {
     class DiscreteAnchors : public Anchors {
     public:
         typedef _T value_type;
-        typedef std::function<std::string&& (value_type&)> formatter_type;
+        typedef std::function<std::string (value_type&)> formatter_type;
         typedef std::shared_ptr<std::vector<value_type>> value_list_type;
 
         DiscreteAnchors() {}
@@ -91,17 +91,17 @@ namespace MD {
 
         std::size_t count() override { return display_count_; }
         double positionAt(std::size_t idx) override { return double(idx) * duration_ / (points_->size() - 1); }
-        std::string&& nameAt(std::size_t idx) override {
+        std::string nameAt(std::size_t idx) override {
             if (formatter_) {
                 std::string name = formatter_(points_->at(idx * duration_));
-                return std::move(name);
+                return name;
             }
             else {
                 std::string name;
                 std::strstream s;
                 s << idx;
                 s >> name;
-                return std::move(name);
+                return name;
             }
         }
         void setFormatter(formatter_type f) {

@@ -50,7 +50,7 @@ namespace MD {
         
         std::size_t collect(_Tp&& item) {
             std::lock_guard<std::mutex> l(lock_);
-            store_.emplace_back(item);
+            store_.emplace_back(std::move(item));
             return store_.size();
         }
         const std::vector<_Tp, _Allocator>& data() const {
@@ -58,7 +58,7 @@ namespace MD {
         }
         
         void setMainThread() { main_thread_ = true; }
-        void setName(std::string&& name) { name_ = name; }
+        void setName(std::string&& name) { name_ = std::move(name); }
         std::string& name() {
             if (name_.size() == 0) {
                 if (main_thread_) {
@@ -104,8 +104,8 @@ namespace MD {
         //            std::size_t min_index_ = 0;
         //            std::size_t max_index_ = 0;
         
-        Storage(Storage<_Tp, _Allocator>&) {};
-        Storage<_Tp, _Allocator>& operator = (Storage<_Tp, _Allocator>&) {};
+        Storage(Storage<_Tp, _Allocator>&) = delete;
+        Storage<_Tp, _Allocator>& operator = (Storage<_Tp, _Allocator>&) = delete;
     };
 }
 

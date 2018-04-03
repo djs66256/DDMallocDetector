@@ -10,15 +10,13 @@
 #define Macros_h
 
 #define MD_NO_COPY(TypeName)            \
-    TypeName(const TypeName&) = delete; \
-    TypeName(const TypeName&&) = delete;
+    TypeName(const TypeName&) = delete
 
 #define MD_NO_ASSIGN(TypeName)                      \
-    TypeName& operater= (const TypeName&) = delete; \
-    TypeName& operater= (const TypeName&&) = delete;
+    TypeName& operator= (const TypeName&) = delete
 
 #define MD_NO_COPY_ASSIGN(TypeName) \
-    MD_NO_COPY(TypeName)            \
+    MD_NO_COPY(TypeName);           \
     MD_NO_ASSIGN(TypeName)
 
 #endif /* Macros_h */

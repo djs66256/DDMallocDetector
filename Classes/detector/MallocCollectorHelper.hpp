@@ -20,7 +20,7 @@ namespace MD {
         template <class _S>
         struct CollectorChecker {
             static int64_t max() {
-                return 1024;
+                return 1024*1024;
             }
             static void overflow(_S* storage) {
                 

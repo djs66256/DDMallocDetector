@@ -121,14 +121,14 @@ namespace MD {
             ThreadInfo threadInfo;
             threadInfo.name = st->name();
             threadInfo.list = list;
-            data_->emplace_back(threadInfo);
+            data_->emplace_back(std::move(threadInfo));
         };
         
         pool().EnumerateRunningPool(func);
         pool().EnumerateDeadPool(func);
         
         std::for_each(g_counter.begin(), g_counter.end(), [&](auto& c) {
-            all_list_->emplace_back(std::make_pair(c.size, c.count == 0 ? 0 : c.duration / c.count));
+            all_list_->emplace_back(c.size, c.count == 0 ? 0 : c.duration / c.count);
         });
     }
 }

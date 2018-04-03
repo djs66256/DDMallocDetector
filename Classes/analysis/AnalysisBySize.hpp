@@ -78,7 +78,7 @@ namespace MD {
             std::for_each(s->data().begin(), s->data().end(), [&](auto& mem) {
                 threadInfo.count(mem.size);
             });
-            thread_info_list_->emplace_back(threadInfo);
+            thread_info_list_->emplace_back(std::move(threadInfo));
         };
         pool().EnumerateRunningPool(func);
         pool().EnumerateDeadPool(func);

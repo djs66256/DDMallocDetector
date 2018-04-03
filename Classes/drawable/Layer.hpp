@@ -56,7 +56,7 @@ namespace MD {
         Rect absoluteFrame() const;
         
     private:
-        MD_NO_COPY(Layer)
+        MD_NO_COPY(Layer);
         
         Edges edges_;
         Layer *super_layer_ = nullptr;

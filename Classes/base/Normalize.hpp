@@ -42,6 +42,7 @@ namespace MD {
                 return *this;
             }
             CompositeNormalize& then(Normalize<_T>&& normalize) {
+                // to lvalue
                 return then(normalize);
             }
 
@@ -108,7 +109,7 @@ namespace MD {
                         new_value.first = (*i).first;
                         ++i;
                     }
-                    new_ptr->emplace_back(new_value);
+                    new_ptr->emplace_back(std::move(new_value));
                     x += delta;
                 }
                 return new_ptr;

@@ -35,7 +35,7 @@ namespace MD {
             std::lock_guard<std::mutex> l(lock_);
             auto idx = std::find(running_pool_.begin(), running_pool_.end(), s);
             if (idx != running_pool_.end()) {
-                dead_pool_.push_back(*idx);
+                dead_pool_.emplace_back(std::move(*idx));
                 running_pool_.erase(idx);
             }
         }
