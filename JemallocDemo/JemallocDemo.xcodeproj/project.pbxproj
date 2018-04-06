@@ -1,0 +1,1094 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6506542220777724006D207E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6506542120777724006D207E /* AppDelegate.m */; };
+		6506542520777724006D207E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6506542420777724006D207E /* ViewController.m */; };
+		6506542820777724006D207E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6506542620777724006D207E /* Main.storyboard */; };
+		6506542A20777724006D207E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6506542920777724006D207E /* Assets.xcassets */; };
+		6506542D20777724006D207E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6506542B20777724006D207E /* LaunchScreen.storyboard */; };
+		6506543020777724006D207E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6506542F20777724006D207E /* main.m */; };
+		650654CC2077773A006D207E /* jemalloc_defs.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 650654392077773A006D207E /* jemalloc_defs.h.in */; };
+		650654CD2077773A006D207E /* jemalloc_typedefs.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 6506543C2077773A006D207E /* jemalloc_typedefs.h.in */; };
+		650654CE2077773A006D207E /* jemalloc_internal_defs.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 650654412077773A006D207E /* jemalloc_internal_defs.h.in */; };
+		650654CF2077773A006D207E /* private_symbols_jet.awk in Resources */ = {isa = PBXBuildFile; fileRef = 650654532077773A006D207E /* private_symbols_jet.awk */; };
+		650654D02077773A006D207E /* size_classes.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6506545A2077773A006D207E /* size_classes.sh */; };
+		650654D12077773A006D207E /* jemalloc_preamble.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 6506545C2077773A006D207E /* jemalloc_preamble.h.in */; };
+		650654D22077773A006D207E /* public_symbols.txt in Resources */ = {isa = PBXBuildFile; fileRef = 650654672077773A006D207E /* public_symbols.txt */; };
+		650654D32077773A006D207E /* private_symbols.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6506546E2077773A006D207E /* private_symbols.sh */; };
+		650654D42077773A006D207E /* private_namespace.sh in Resources */ = {isa = PBXBuildFile; fileRef = 650654772077773A006D207E /* private_namespace.sh */; };
+		650654D52077773A006D207E /* smoothstep.sh in Resources */ = {isa = PBXBuildFile; fileRef = 650654792077773A006D207E /* smoothstep.sh */; };
+		650654D62077773A006D207E /* private_symbols.awk in Resources */ = {isa = PBXBuildFile; fileRef = 6506547A2077773A006D207E /* private_symbols.awk */; };
+		650654D72077773A006D207E /* public_namespace.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6506547E2077773A006D207E /* public_namespace.sh */; };
+		650654D82077773A006D207E /* public_unnamespace.sh in Resources */ = {isa = PBXBuildFile; fileRef = 650654972077773A006D207E /* public_unnamespace.sh */; };
+		650654D92077773A006D207E /* jemalloc_rename.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6506549C2077773A006D207E /* jemalloc_rename.sh */; };
+		650654DA2077773A006D207E /* jemalloc_mangle.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6506549F2077773A006D207E /* jemalloc_mangle.sh */; };
+		650654DB2077773A006D207E /* jemalloc.sh in Resources */ = {isa = PBXBuildFile; fileRef = 650654A12077773A006D207E /* jemalloc.sh */; };
+		650654DC2077773A006D207E /* jemalloc_macros.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 650654A32077773A006D207E /* jemalloc_macros.h.in */; };
+		650654DD2077773A006D207E /* jemalloc_protos.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 650654A42077773A006D207E /* jemalloc_protos.h.in */; };
+		650654E22077773A006D207E /* jemalloc.sym.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 650654B12077773A006D207E /* jemalloc.sym.o */; };
+		6506550620777A68006D207E /* jemalloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506550420777A68006D207E /* jemalloc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506550920777A68006D207E /* jemalloc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6506550220777A68006D207E /* jemalloc.framework */; };
+		6506550A20777A68006D207E /* jemalloc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6506550220777A68006D207E /* jemalloc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6506550F20777A85006D207E /* background_thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654AD2077773A006D207E /* background_thread.c */; };
+		6506551020777A85006D207E /* ticker.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654AE2077773A006D207E /* ticker.c */; };
+		6506551120777A85006D207E /* malloc_io.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654AF2077773A006D207E /* malloc_io.c */; };
+		6506551220777A85006D207E /* jemalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B02077773A006D207E /* jemalloc.c */; };
+		6506551320777A85006D207E /* ckh.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B22077773A006D207E /* ckh.c */; };
+		6506551420777A85006D207E /* witness.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B32077773A006D207E /* witness.c */; };
+		6506551520777A85006D207E /* large.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B42077773A006D207E /* large.c */; };
+		6506551620777A85006D207E /* bitmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B52077773A006D207E /* bitmap.c */; };
+		6506551720777A85006D207E /* mutex.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B62077773A006D207E /* mutex.c */; };
+		6506551820777A85006D207E /* base.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B72077773A006D207E /* base.c */; };
+		6506551920777A85006D207E /* prof.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B82077773A006D207E /* prof.c */; };
+		6506551A20777A85006D207E /* stats.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654B92077773A006D207E /* stats.c */; };
+		6506551B20777A85006D207E /* hash.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654BA2077773A006D207E /* hash.c */; };
+		6506551C20777A85006D207E /* arena.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654BB2077773A006D207E /* arena.c */; };
+		6506551D20777A85006D207E /* rtree.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654BC2077773A006D207E /* rtree.c */; };
+		6506551E20777A85006D207E /* zone.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654BD2077773A006D207E /* zone.c */; };
+		6506551F20777A85006D207E /* tcache.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654BE2077773A006D207E /* tcache.c */; };
+		6506552020777A85006D207E /* sz.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654BF2077773A006D207E /* sz.c */; };
+		6506552120777A85006D207E /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C02077773A006D207E /* prng.c */; };
+		6506552220777A85006D207E /* tsd.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C12077773A006D207E /* tsd.c */; };
+		6506552320777A85006D207E /* hooks.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C22077773A006D207E /* hooks.c */; };
+		6506552420777A85006D207E /* pages.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C32077773A006D207E /* pages.c */; };
+		6506552520777A85006D207E /* ctl.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C42077773A006D207E /* ctl.c */; };
+		6506552620777A85006D207E /* spin.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C52077773A006D207E /* spin.c */; };
+		6506552720777A85006D207E /* mutex_pool.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C62077773A006D207E /* mutex_pool.c */; };
+		6506552820777A85006D207E /* nstime.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C72077773A006D207E /* nstime.c */; };
+		6506552920777A85006D207E /* extent_dss.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C82077773A006D207E /* extent_dss.c */; };
+		6506552A20777A85006D207E /* extent.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654C92077773A006D207E /* extent.c */; };
+		6506552B20777A85006D207E /* extent_mmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 650654CA2077773A006D207E /* extent_mmap.c */; };
+		6506552C20777A85006D207E /* jemalloc_cpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650654CB2077773A006D207E /* jemalloc_cpp.cpp */; };
+		6506552D20777AAE006D207E /* arena_externs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654842077773A006D207E /* arena_externs.h */; };
+		6506552E20777AAE006D207E /* arena_inlines_a.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654512077773A006D207E /* arena_inlines_a.h */; };
+		6506552F20777AAE006D207E /* arena_inlines_b.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654652077773A006D207E /* arena_inlines_b.h */; };
+		6506553020777AAE006D207E /* arena_structs_a.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506546D2077773A006D207E /* arena_structs_a.h */; };
+		6506553120777AAE006D207E /* arena_structs_b.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654522077773A006D207E /* arena_structs_b.h */; };
+		6506553220777AAE006D207E /* arena_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654472077773A006D207E /* arena_types.h */; };
+		6506553320777AAE006D207E /* assert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506548F2077773A006D207E /* assert.h */; };
+		6506553420777AAE006D207E /* atomic_c11.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654872077773A006D207E /* atomic_c11.h */; };
+		6506553520777AAE006D207E /* atomic_gcc_atomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506547D2077773A006D207E /* atomic_gcc_atomic.h */; };
+		6506553620777AAE006D207E /* atomic_gcc_sync.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654782077773A006D207E /* atomic_gcc_sync.h */; };
+		6506553720777AAE006D207E /* atomic_msvc.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654632077773A006D207E /* atomic_msvc.h */; };
+		6506553820777AAE006D207E /* atomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654992077773A006D207E /* atomic.h */; };
+		6506553920777AAE006D207E /* background_thread_externs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654442077773A006D207E /* background_thread_externs.h */; };
+		6506553A20777AAE006D207E /* background_thread_inlines.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654502077773A006D207E /* background_thread_inlines.h */; };
+		6506553B20777AAE006D207E /* background_thread_structs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506544F2077773A006D207E /* background_thread_structs.h */; };
+		6506553C20777AAE006D207E /* base_externs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654762077773A006D207E /* base_externs.h */; };
+		6506553D20777AAE006D207E /* base_inlines.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654852077773A006D207E /* base_inlines.h */; };
+		6506553E20777AAE006D207E /* base_structs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654862077773A006D207E /* base_structs.h */; };
+		6506553F20777AAE006D207E /* base_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654592077773A006D207E /* base_types.h */; };
+		6506554020777AAE006D207E /* bit_util.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506548D2077773A006D207E /* bit_util.h */; };
+		6506554120777AAE006D207E /* bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506548E2077773A006D207E /* bitmap.h */; };
+		6506554220777AAE006D207E /* ckh.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654802077773A006D207E /* ckh.h */; };
+		6506554320777AAE006D207E /* ctl.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506545E2077773A006D207E /* ctl.h */; };
+		6506554420777AAE006D207E /* extent_dss.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506546C2077773A006D207E /* extent_dss.h */; };
+		6506554520777AAE006D207E /* extent_externs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654462077773A006D207E /* extent_externs.h */; };
+		6506554620777AAE006D207E /* extent_inlines.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654542077773A006D207E /* extent_inlines.h */; };
+		6506554720777AAE006D207E /* extent_mmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654682077773A006D207E /* extent_mmap.h */; };
+		6506554820777AAE006D207E /* extent_structs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654552077773A006D207E /* extent_structs.h */; };
+		6506554920777AAE006D207E /* extent_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654812077773A006D207E /* extent_types.h */; };
+		6506554A20777AAE006D207E /* hash.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654942077773A006D207E /* hash.h */; };
+		6506554B20777AAE006D207E /* hooks.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506544D2077773A006D207E /* hooks.h */; };
+		6506554C20777AAE006D207E /* jemalloc_internal_decls.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506546F2077773A006D207E /* jemalloc_internal_decls.h */; };
+		6506554D20777AAE006D207E /* jemalloc_internal_defs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506545B2077773A006D207E /* jemalloc_internal_defs.h */; };
+		6506554E20777AAE006D207E /* jemalloc_internal_defs.h.in in Headers */ = {isa = PBXBuildFile; fileRef = 650654412077773A006D207E /* jemalloc_internal_defs.h.in */; };
+		6506554F20777AAE006D207E /* jemalloc_internal_externs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506547B2077773A006D207E /* jemalloc_internal_externs.h */; };
+		6506555020777AAE006D207E /* jemalloc_internal_includes.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654642077773A006D207E /* jemalloc_internal_includes.h */; };
+		6506555120777AAE006D207E /* jemalloc_internal_inlines_a.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654662077773A006D207E /* jemalloc_internal_inlines_a.h */; };
+		6506555220777AAE006D207E /* jemalloc_internal_inlines_b.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506544A2077773A006D207E /* jemalloc_internal_inlines_b.h */; };
+		6506555320777AAE006D207E /* jemalloc_internal_inlines_c.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654912077773A006D207E /* jemalloc_internal_inlines_c.h */; };
+		6506555420777AAE006D207E /* jemalloc_internal_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654692077773A006D207E /* jemalloc_internal_macros.h */; };
+		6506555520777AAE006D207E /* jemalloc_internal_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506548C2077773A006D207E /* jemalloc_internal_types.h */; };
+		6506555620777AAE006D207E /* jemalloc_preamble.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654982077773A006D207E /* jemalloc_preamble.h */; };
+		6506555720777AAE006D207E /* jemalloc_preamble.h.in in Headers */ = {isa = PBXBuildFile; fileRef = 6506545C2077773A006D207E /* jemalloc_preamble.h.in */; };
+		6506555820777AAE006D207E /* large_externs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654562077773A006D207E /* large_externs.h */; };
+		6506555920777AAE006D207E /* malloc_io.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654722077773A006D207E /* malloc_io.h */; };
+		6506555A20777AAE006D207E /* mutex_pool.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654602077773A006D207E /* mutex_pool.h */; };
+		6506555B20777AAE006D207E /* mutex_prof.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654712077773A006D207E /* mutex_prof.h */; };
+		6506555C20777AAE006D207E /* mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654892077773A006D207E /* mutex.h */; };
+		6506555D20777AAE006D207E /* nstime.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654582077773A006D207E /* nstime.h */; };
+		6506555E20777AAE006D207E /* pages.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506544B2077773A006D207E /* pages.h */; };
+		6506555F20777AAE006D207E /* ph.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654882077773A006D207E /* ph.h */; };
+		6506556020777AAE006D207E /* prng.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506543E2077773A006D207E /* prng.h */; };
+		6506556120777AAE006D207E /* prof_externs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506545F2077773A006D207E /* prof_externs.h */; };
+		6506556220777AAE006D207E /* prof_inlines_a.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654572077773A006D207E /* prof_inlines_a.h */; };
+		6506556320777AAE006D207E /* prof_inlines_b.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654432077773A006D207E /* prof_inlines_b.h */; };
+		6506556420777AAE006D207E /* prof_structs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506546A2077773A006D207E /* prof_structs.h */; };
+		6506556520777AAE006D207E /* prof_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654422077773A006D207E /* prof_types.h */; };
+		6506556620777AAE006D207E /* public_namespace.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654402077773A006D207E /* public_namespace.h */; };
+		6506556720777AAE006D207E /* public_unnamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654822077773A006D207E /* public_unnamespace.h */; };
+		6506556820777AAE006D207E /* ql.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654922077773A006D207E /* ql.h */; };
+		6506556920777AAE006D207E /* qr.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654612077773A006D207E /* qr.h */; };
+		6506556A20777AAF006D207E /* rb.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654482077773A006D207E /* rb.h */; };
+		6506556B20777AAF006D207E /* rtree_tsd.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654622077773A006D207E /* rtree_tsd.h */; };
+		6506556C20777AAF006D207E /* rtree.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654492077773A006D207E /* rtree.h */; };
+		6506556D20777AAF006D207E /* size_classes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506548A2077773A006D207E /* size_classes.h */; };
+		6506556E20777AAF006D207E /* smoothstep.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506546B2077773A006D207E /* smoothstep.h */; };
+		6506556F20777AAF006D207E /* spin.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506545D2077773A006D207E /* spin.h */; };
+		6506557020777AAF006D207E /* stats_tsd.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654902077773A006D207E /* stats_tsd.h */; };
+		6506557120777AAF006D207E /* stats.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654932077773A006D207E /* stats.h */; };
+		6506557220777AAF006D207E /* sz.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506543F2077773A006D207E /* sz.h */; };
+		6506557320777AAF006D207E /* tcache_externs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654832077773A006D207E /* tcache_externs.h */; };
+		6506557420777AAF006D207E /* tcache_inlines.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654742077773A006D207E /* tcache_inlines.h */; };
+		6506557520777AAF006D207E /* tcache_structs.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654752077773A006D207E /* tcache_structs.h */; };
+		6506557620777AAF006D207E /* tcache_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506548B2077773A006D207E /* tcache_types.h */; };
+		6506557720777AAF006D207E /* ticker.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654732077773A006D207E /* ticker.h */; };
+		6506557820777AAF006D207E /* tsd_generic.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654452077773A006D207E /* tsd_generic.h */; };
+		6506557920777AAF006D207E /* tsd_malloc_thread_cleanup.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654702077773A006D207E /* tsd_malloc_thread_cleanup.h */; };
+		6506557A20777AAF006D207E /* tsd_tls.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654952077773A006D207E /* tsd_tls.h */; };
+		6506557B20777AAF006D207E /* tsd_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654962077773A006D207E /* tsd_types.h */; };
+		6506557C20777AAF006D207E /* tsd_win.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506544C2077773A006D207E /* tsd_win.h */; };
+		6506557D20777AAF006D207E /* tsd.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506544E2077773A006D207E /* tsd.h */; };
+		6506557E20777AAF006D207E /* util.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506547F2077773A006D207E /* util.h */; };
+		6506557F20777AAF006D207E /* witness.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506547C2077773A006D207E /* witness.h */; };
+		6506558020777AC9006D207E /* jemalloc_defs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506549B2077773A006D207E /* jemalloc_defs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506558120777AC9006D207E /* jemalloc_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654A22077773A006D207E /* jemalloc_macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506558220777AC9006D207E /* jemalloc_mangle_jet.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506549E2077773A006D207E /* jemalloc_mangle_jet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506558320777AC9006D207E /* jemalloc_mangle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506543B2077773A006D207E /* jemalloc_mangle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506558420777AC9006D207E /* jemalloc_protos_jet.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506549D2077773A006D207E /* jemalloc_protos_jet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506558520777AC9006D207E /* jemalloc_protos.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654A52077773A006D207E /* jemalloc_protos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506558620777AC9006D207E /* jemalloc_rename.h in Headers */ = {isa = PBXBuildFile; fileRef = 650654A02077773A006D207E /* jemalloc_rename.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506558720777AC9006D207E /* jemalloc_typedefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506543A2077773A006D207E /* jemalloc_typedefs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6506558820777AC9006D207E /* jemalloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506549A2077773A006D207E /* jemalloc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6506550720777A68006D207E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6506541520777724006D207E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6506550120777A68006D207E;
+			remoteInfo = jemalloc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6506550E20777A68006D207E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6506550A20777A68006D207E /* jemalloc.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6506541D20777724006D207E /* JemallocDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JemallocDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6506542020777724006D207E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6506542120777724006D207E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6506542320777724006D207E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6506542420777724006D207E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6506542720777724006D207E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6506542920777724006D207E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6506542C20777724006D207E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6506542E20777724006D207E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6506542F20777724006D207E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		650654392077773A006D207E /* jemalloc_defs.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jemalloc_defs.h.in; sourceTree = "<group>"; };
+		6506543A2077773A006D207E /* jemalloc_typedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_typedefs.h; sourceTree = "<group>"; };
+		6506543B2077773A006D207E /* jemalloc_mangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_mangle.h; sourceTree = "<group>"; };
+		6506543C2077773A006D207E /* jemalloc_typedefs.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jemalloc_typedefs.h.in; sourceTree = "<group>"; };
+		6506543E2077773A006D207E /* prng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
+		6506543F2077773A006D207E /* sz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sz.h; sourceTree = "<group>"; };
+		650654402077773A006D207E /* public_namespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = public_namespace.h; sourceTree = "<group>"; };
+		650654412077773A006D207E /* jemalloc_internal_defs.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jemalloc_internal_defs.h.in; sourceTree = "<group>"; };
+		650654422077773A006D207E /* prof_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prof_types.h; sourceTree = "<group>"; };
+		650654432077773A006D207E /* prof_inlines_b.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prof_inlines_b.h; sourceTree = "<group>"; };
+		650654442077773A006D207E /* background_thread_externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = background_thread_externs.h; sourceTree = "<group>"; };
+		650654452077773A006D207E /* tsd_generic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd_generic.h; sourceTree = "<group>"; };
+		650654462077773A006D207E /* extent_externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extent_externs.h; sourceTree = "<group>"; };
+		650654472077773A006D207E /* arena_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arena_types.h; sourceTree = "<group>"; };
+		650654482077773A006D207E /* rb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rb.h; sourceTree = "<group>"; };
+		650654492077773A006D207E /* rtree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtree.h; sourceTree = "<group>"; };
+		6506544A2077773A006D207E /* jemalloc_internal_inlines_b.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_inlines_b.h; sourceTree = "<group>"; };
+		6506544B2077773A006D207E /* pages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pages.h; sourceTree = "<group>"; };
+		6506544C2077773A006D207E /* tsd_win.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd_win.h; sourceTree = "<group>"; };
+		6506544D2077773A006D207E /* hooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hooks.h; sourceTree = "<group>"; };
+		6506544E2077773A006D207E /* tsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd.h; sourceTree = "<group>"; };
+		6506544F2077773A006D207E /* background_thread_structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = background_thread_structs.h; sourceTree = "<group>"; };
+		650654502077773A006D207E /* background_thread_inlines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = background_thread_inlines.h; sourceTree = "<group>"; };
+		650654512077773A006D207E /* arena_inlines_a.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arena_inlines_a.h; sourceTree = "<group>"; };
+		650654522077773A006D207E /* arena_structs_b.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arena_structs_b.h; sourceTree = "<group>"; };
+		650654532077773A006D207E /* private_symbols_jet.awk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_symbols_jet.awk; sourceTree = "<group>"; };
+		650654542077773A006D207E /* extent_inlines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extent_inlines.h; sourceTree = "<group>"; };
+		650654552077773A006D207E /* extent_structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extent_structs.h; sourceTree = "<group>"; };
+		650654562077773A006D207E /* large_externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = large_externs.h; sourceTree = "<group>"; };
+		650654572077773A006D207E /* prof_inlines_a.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prof_inlines_a.h; sourceTree = "<group>"; };
+		650654582077773A006D207E /* nstime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nstime.h; sourceTree = "<group>"; };
+		650654592077773A006D207E /* base_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_types.h; sourceTree = "<group>"; };
+		6506545A2077773A006D207E /* size_classes.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = size_classes.sh; sourceTree = "<group>"; };
+		6506545B2077773A006D207E /* jemalloc_internal_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_defs.h; sourceTree = "<group>"; };
+		6506545C2077773A006D207E /* jemalloc_preamble.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jemalloc_preamble.h.in; sourceTree = "<group>"; };
+		6506545D2077773A006D207E /* spin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spin.h; sourceTree = "<group>"; };
+		6506545E2077773A006D207E /* ctl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ctl.h; sourceTree = "<group>"; };
+		6506545F2077773A006D207E /* prof_externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prof_externs.h; sourceTree = "<group>"; };
+		650654602077773A006D207E /* mutex_pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutex_pool.h; sourceTree = "<group>"; };
+		650654612077773A006D207E /* qr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qr.h; sourceTree = "<group>"; };
+		650654622077773A006D207E /* rtree_tsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtree_tsd.h; sourceTree = "<group>"; };
+		650654632077773A006D207E /* atomic_msvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomic_msvc.h; sourceTree = "<group>"; };
+		650654642077773A006D207E /* jemalloc_internal_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_includes.h; sourceTree = "<group>"; };
+		650654652077773A006D207E /* arena_inlines_b.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arena_inlines_b.h; sourceTree = "<group>"; };
+		650654662077773A006D207E /* jemalloc_internal_inlines_a.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_inlines_a.h; sourceTree = "<group>"; };
+		650654672077773A006D207E /* public_symbols.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_symbols.txt; sourceTree = "<group>"; };
+		650654682077773A006D207E /* extent_mmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extent_mmap.h; sourceTree = "<group>"; };
+		650654692077773A006D207E /* jemalloc_internal_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_macros.h; sourceTree = "<group>"; };
+		6506546A2077773A006D207E /* prof_structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prof_structs.h; sourceTree = "<group>"; };
+		6506546B2077773A006D207E /* smoothstep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smoothstep.h; sourceTree = "<group>"; };
+		6506546C2077773A006D207E /* extent_dss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extent_dss.h; sourceTree = "<group>"; };
+		6506546D2077773A006D207E /* arena_structs_a.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arena_structs_a.h; sourceTree = "<group>"; };
+		6506546E2077773A006D207E /* private_symbols.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = private_symbols.sh; sourceTree = "<group>"; };
+		6506546F2077773A006D207E /* jemalloc_internal_decls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_decls.h; sourceTree = "<group>"; };
+		650654702077773A006D207E /* tsd_malloc_thread_cleanup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd_malloc_thread_cleanup.h; sourceTree = "<group>"; };
+		650654712077773A006D207E /* mutex_prof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutex_prof.h; sourceTree = "<group>"; };
+		650654722077773A006D207E /* malloc_io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = malloc_io.h; sourceTree = "<group>"; };
+		650654732077773A006D207E /* ticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ticker.h; sourceTree = "<group>"; };
+		650654742077773A006D207E /* tcache_inlines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcache_inlines.h; sourceTree = "<group>"; };
+		650654752077773A006D207E /* tcache_structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcache_structs.h; sourceTree = "<group>"; };
+		650654762077773A006D207E /* base_externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_externs.h; sourceTree = "<group>"; };
+		650654772077773A006D207E /* private_namespace.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = private_namespace.sh; sourceTree = "<group>"; };
+		650654782077773A006D207E /* atomic_gcc_sync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomic_gcc_sync.h; sourceTree = "<group>"; };
+		650654792077773A006D207E /* smoothstep.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = smoothstep.sh; sourceTree = "<group>"; };
+		6506547A2077773A006D207E /* private_symbols.awk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_symbols.awk; sourceTree = "<group>"; };
+		6506547B2077773A006D207E /* jemalloc_internal_externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_externs.h; sourceTree = "<group>"; };
+		6506547C2077773A006D207E /* witness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = witness.h; sourceTree = "<group>"; };
+		6506547D2077773A006D207E /* atomic_gcc_atomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomic_gcc_atomic.h; sourceTree = "<group>"; };
+		6506547E2077773A006D207E /* public_namespace.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = public_namespace.sh; sourceTree = "<group>"; };
+		6506547F2077773A006D207E /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		650654802077773A006D207E /* ckh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ckh.h; sourceTree = "<group>"; };
+		650654812077773A006D207E /* extent_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extent_types.h; sourceTree = "<group>"; };
+		650654822077773A006D207E /* public_unnamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = public_unnamespace.h; sourceTree = "<group>"; };
+		650654832077773A006D207E /* tcache_externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcache_externs.h; sourceTree = "<group>"; };
+		650654842077773A006D207E /* arena_externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arena_externs.h; sourceTree = "<group>"; };
+		650654852077773A006D207E /* base_inlines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_inlines.h; sourceTree = "<group>"; };
+		650654862077773A006D207E /* base_structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_structs.h; sourceTree = "<group>"; };
+		650654872077773A006D207E /* atomic_c11.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomic_c11.h; sourceTree = "<group>"; };
+		650654882077773A006D207E /* ph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ph.h; sourceTree = "<group>"; };
+		650654892077773A006D207E /* mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutex.h; sourceTree = "<group>"; };
+		6506548A2077773A006D207E /* size_classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = size_classes.h; sourceTree = "<group>"; };
+		6506548B2077773A006D207E /* tcache_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcache_types.h; sourceTree = "<group>"; };
+		6506548C2077773A006D207E /* jemalloc_internal_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_types.h; sourceTree = "<group>"; };
+		6506548D2077773A006D207E /* bit_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bit_util.h; sourceTree = "<group>"; };
+		6506548E2077773A006D207E /* bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitmap.h; sourceTree = "<group>"; };
+		6506548F2077773A006D207E /* assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = assert.h; sourceTree = "<group>"; };
+		650654902077773A006D207E /* stats_tsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stats_tsd.h; sourceTree = "<group>"; };
+		650654912077773A006D207E /* jemalloc_internal_inlines_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_internal_inlines_c.h; sourceTree = "<group>"; };
+		650654922077773A006D207E /* ql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ql.h; sourceTree = "<group>"; };
+		650654932077773A006D207E /* stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stats.h; sourceTree = "<group>"; };
+		650654942077773A006D207E /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
+		650654952077773A006D207E /* tsd_tls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd_tls.h; sourceTree = "<group>"; };
+		650654962077773A006D207E /* tsd_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tsd_types.h; sourceTree = "<group>"; };
+		650654972077773A006D207E /* public_unnamespace.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = public_unnamespace.sh; sourceTree = "<group>"; };
+		650654982077773A006D207E /* jemalloc_preamble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_preamble.h; sourceTree = "<group>"; };
+		650654992077773A006D207E /* atomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomic.h; sourceTree = "<group>"; };
+		6506549A2077773A006D207E /* jemalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc.h; sourceTree = "<group>"; };
+		6506549B2077773A006D207E /* jemalloc_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_defs.h; sourceTree = "<group>"; };
+		6506549C2077773A006D207E /* jemalloc_rename.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = jemalloc_rename.sh; sourceTree = "<group>"; };
+		6506549D2077773A006D207E /* jemalloc_protos_jet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_protos_jet.h; sourceTree = "<group>"; };
+		6506549E2077773A006D207E /* jemalloc_mangle_jet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_mangle_jet.h; sourceTree = "<group>"; };
+		6506549F2077773A006D207E /* jemalloc_mangle.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = jemalloc_mangle.sh; sourceTree = "<group>"; };
+		650654A02077773A006D207E /* jemalloc_rename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_rename.h; sourceTree = "<group>"; };
+		650654A12077773A006D207E /* jemalloc.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = jemalloc.sh; sourceTree = "<group>"; };
+		650654A22077773A006D207E /* jemalloc_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_macros.h; sourceTree = "<group>"; };
+		650654A32077773A006D207E /* jemalloc_macros.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jemalloc_macros.h.in; sourceTree = "<group>"; };
+		650654A42077773A006D207E /* jemalloc_protos.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jemalloc_protos.h.in; sourceTree = "<group>"; };
+		650654A52077773A006D207E /* jemalloc_protos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jemalloc_protos.h; sourceTree = "<group>"; };
+		650654AD2077773A006D207E /* background_thread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = background_thread.c; sourceTree = "<group>"; };
+		650654AE2077773A006D207E /* ticker.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ticker.c; sourceTree = "<group>"; };
+		650654AF2077773A006D207E /* malloc_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = malloc_io.c; sourceTree = "<group>"; };
+		650654B02077773A006D207E /* jemalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jemalloc.c; sourceTree = "<group>"; };
+		650654B12077773A006D207E /* jemalloc.sym.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = jemalloc.sym.o; sourceTree = "<group>"; };
+		650654B22077773A006D207E /* ckh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ckh.c; sourceTree = "<group>"; };
+		650654B32077773A006D207E /* witness.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = witness.c; sourceTree = "<group>"; };
+		650654B42077773A006D207E /* large.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = large.c; sourceTree = "<group>"; };
+		650654B52077773A006D207E /* bitmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitmap.c; sourceTree = "<group>"; };
+		650654B62077773A006D207E /* mutex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mutex.c; sourceTree = "<group>"; };
+		650654B72077773A006D207E /* base.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base.c; sourceTree = "<group>"; };
+		650654B82077773A006D207E /* prof.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prof.c; sourceTree = "<group>"; };
+		650654B92077773A006D207E /* stats.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stats.c; sourceTree = "<group>"; };
+		650654BA2077773A006D207E /* hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hash.c; sourceTree = "<group>"; };
+		650654BB2077773A006D207E /* arena.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arena.c; sourceTree = "<group>"; };
+		650654BC2077773A006D207E /* rtree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtree.c; sourceTree = "<group>"; };
+		650654BD2077773A006D207E /* zone.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zone.c; sourceTree = "<group>"; };
+		650654BE2077773A006D207E /* tcache.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tcache.c; sourceTree = "<group>"; };
+		650654BF2077773A006D207E /* sz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sz.c; sourceTree = "<group>"; };
+		650654C02077773A006D207E /* prng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
+		650654C12077773A006D207E /* tsd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tsd.c; sourceTree = "<group>"; };
+		650654C22077773A006D207E /* hooks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hooks.c; sourceTree = "<group>"; };
+		650654C32077773A006D207E /* pages.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pages.c; sourceTree = "<group>"; };
+		650654C42077773A006D207E /* ctl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ctl.c; sourceTree = "<group>"; };
+		650654C52077773A006D207E /* spin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = spin.c; sourceTree = "<group>"; };
+		650654C62077773A006D207E /* mutex_pool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mutex_pool.c; sourceTree = "<group>"; };
+		650654C72077773A006D207E /* nstime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nstime.c; sourceTree = "<group>"; };
+		650654C82077773A006D207E /* extent_dss.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extent_dss.c; sourceTree = "<group>"; };
+		650654C92077773A006D207E /* extent.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extent.c; sourceTree = "<group>"; };
+		650654CA2077773A006D207E /* extent_mmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extent_mmap.c; sourceTree = "<group>"; };
+		650654CB2077773A006D207E /* jemalloc_cpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jemalloc_cpp.cpp; sourceTree = "<group>"; };
+		6506550220777A68006D207E /* jemalloc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = jemalloc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6506550420777A68006D207E /* jemalloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jemalloc.h; sourceTree = "<group>"; };
+		6506550520777A68006D207E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6506541A20777724006D207E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				650654E22077773A006D207E /* jemalloc.sym.o in Frameworks */,
+				6506550920777A68006D207E /* jemalloc.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		650654FE20777A68006D207E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6506541420777724006D207E = {
+			isa = PBXGroup;
+			children = (
+				650654362077773A006D207E /* jemalloc */,
+				6506541F20777724006D207E /* JemallocDemo */,
+				6506550320777A68006D207E /* jemalloc */,
+				6506541E20777724006D207E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6506541E20777724006D207E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6506541D20777724006D207E /* JemallocDemo.app */,
+				6506550220777A68006D207E /* jemalloc.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6506541F20777724006D207E /* JemallocDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6506542020777724006D207E /* AppDelegate.h */,
+				6506542120777724006D207E /* AppDelegate.m */,
+				6506542320777724006D207E /* ViewController.h */,
+				6506542420777724006D207E /* ViewController.m */,
+				6506542620777724006D207E /* Main.storyboard */,
+				6506542920777724006D207E /* Assets.xcassets */,
+				6506542B20777724006D207E /* LaunchScreen.storyboard */,
+				6506542E20777724006D207E /* Info.plist */,
+				6506542F20777724006D207E /* main.m */,
+			);
+			path = JemallocDemo;
+			sourceTree = "<group>";
+		};
+		650654362077773A006D207E /* jemalloc */ = {
+			isa = PBXGroup;
+			children = (
+				650654372077773A006D207E /* include */,
+				650654AC2077773A006D207E /* src */,
+			);
+			name = jemalloc;
+			path = ../Zones/jemalloc;
+			sourceTree = "<group>";
+		};
+		650654372077773A006D207E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				650654382077773A006D207E /* jemalloc */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		650654382077773A006D207E /* jemalloc */ = {
+			isa = PBXGroup;
+			children = (
+				6506543D2077773A006D207E /* internal */,
+				6506549B2077773A006D207E /* jemalloc_defs.h */,
+				650654392077773A006D207E /* jemalloc_defs.h.in */,
+				650654A22077773A006D207E /* jemalloc_macros.h */,
+				650654A32077773A006D207E /* jemalloc_macros.h.in */,
+				6506549E2077773A006D207E /* jemalloc_mangle_jet.h */,
+				6506543B2077773A006D207E /* jemalloc_mangle.h */,
+				6506549F2077773A006D207E /* jemalloc_mangle.sh */,
+				6506549D2077773A006D207E /* jemalloc_protos_jet.h */,
+				650654A52077773A006D207E /* jemalloc_protos.h */,
+				650654A42077773A006D207E /* jemalloc_protos.h.in */,
+				650654A02077773A006D207E /* jemalloc_rename.h */,
+				6506549C2077773A006D207E /* jemalloc_rename.sh */,
+				6506543A2077773A006D207E /* jemalloc_typedefs.h */,
+				6506543C2077773A006D207E /* jemalloc_typedefs.h.in */,
+				6506549A2077773A006D207E /* jemalloc.h */,
+				650654A12077773A006D207E /* jemalloc.sh */,
+			);
+			path = jemalloc;
+			sourceTree = "<group>";
+		};
+		6506543D2077773A006D207E /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				650654842077773A006D207E /* arena_externs.h */,
+				650654512077773A006D207E /* arena_inlines_a.h */,
+				650654652077773A006D207E /* arena_inlines_b.h */,
+				6506546D2077773A006D207E /* arena_structs_a.h */,
+				650654522077773A006D207E /* arena_structs_b.h */,
+				650654472077773A006D207E /* arena_types.h */,
+				6506548F2077773A006D207E /* assert.h */,
+				650654872077773A006D207E /* atomic_c11.h */,
+				6506547D2077773A006D207E /* atomic_gcc_atomic.h */,
+				650654782077773A006D207E /* atomic_gcc_sync.h */,
+				650654632077773A006D207E /* atomic_msvc.h */,
+				650654992077773A006D207E /* atomic.h */,
+				650654442077773A006D207E /* background_thread_externs.h */,
+				650654502077773A006D207E /* background_thread_inlines.h */,
+				6506544F2077773A006D207E /* background_thread_structs.h */,
+				650654762077773A006D207E /* base_externs.h */,
+				650654852077773A006D207E /* base_inlines.h */,
+				650654862077773A006D207E /* base_structs.h */,
+				650654592077773A006D207E /* base_types.h */,
+				6506548D2077773A006D207E /* bit_util.h */,
+				6506548E2077773A006D207E /* bitmap.h */,
+				650654802077773A006D207E /* ckh.h */,
+				6506545E2077773A006D207E /* ctl.h */,
+				6506546C2077773A006D207E /* extent_dss.h */,
+				650654462077773A006D207E /* extent_externs.h */,
+				650654542077773A006D207E /* extent_inlines.h */,
+				650654682077773A006D207E /* extent_mmap.h */,
+				650654552077773A006D207E /* extent_structs.h */,
+				650654812077773A006D207E /* extent_types.h */,
+				650654942077773A006D207E /* hash.h */,
+				6506544D2077773A006D207E /* hooks.h */,
+				6506546F2077773A006D207E /* jemalloc_internal_decls.h */,
+				6506545B2077773A006D207E /* jemalloc_internal_defs.h */,
+				650654412077773A006D207E /* jemalloc_internal_defs.h.in */,
+				6506547B2077773A006D207E /* jemalloc_internal_externs.h */,
+				650654642077773A006D207E /* jemalloc_internal_includes.h */,
+				650654662077773A006D207E /* jemalloc_internal_inlines_a.h */,
+				6506544A2077773A006D207E /* jemalloc_internal_inlines_b.h */,
+				650654912077773A006D207E /* jemalloc_internal_inlines_c.h */,
+				650654692077773A006D207E /* jemalloc_internal_macros.h */,
+				6506548C2077773A006D207E /* jemalloc_internal_types.h */,
+				650654982077773A006D207E /* jemalloc_preamble.h */,
+				6506545C2077773A006D207E /* jemalloc_preamble.h.in */,
+				650654562077773A006D207E /* large_externs.h */,
+				650654722077773A006D207E /* malloc_io.h */,
+				650654602077773A006D207E /* mutex_pool.h */,
+				650654712077773A006D207E /* mutex_prof.h */,
+				650654892077773A006D207E /* mutex.h */,
+				650654582077773A006D207E /* nstime.h */,
+				6506544B2077773A006D207E /* pages.h */,
+				650654882077773A006D207E /* ph.h */,
+				650654772077773A006D207E /* private_namespace.sh */,
+				650654532077773A006D207E /* private_symbols_jet.awk */,
+				6506547A2077773A006D207E /* private_symbols.awk */,
+				6506546E2077773A006D207E /* private_symbols.sh */,
+				6506543E2077773A006D207E /* prng.h */,
+				6506545F2077773A006D207E /* prof_externs.h */,
+				650654572077773A006D207E /* prof_inlines_a.h */,
+				650654432077773A006D207E /* prof_inlines_b.h */,
+				6506546A2077773A006D207E /* prof_structs.h */,
+				650654422077773A006D207E /* prof_types.h */,
+				650654402077773A006D207E /* public_namespace.h */,
+				6506547E2077773A006D207E /* public_namespace.sh */,
+				650654672077773A006D207E /* public_symbols.txt */,
+				650654822077773A006D207E /* public_unnamespace.h */,
+				650654972077773A006D207E /* public_unnamespace.sh */,
+				650654922077773A006D207E /* ql.h */,
+				650654612077773A006D207E /* qr.h */,
+				650654482077773A006D207E /* rb.h */,
+				650654622077773A006D207E /* rtree_tsd.h */,
+				650654492077773A006D207E /* rtree.h */,
+				6506548A2077773A006D207E /* size_classes.h */,
+				6506545A2077773A006D207E /* size_classes.sh */,
+				6506546B2077773A006D207E /* smoothstep.h */,
+				650654792077773A006D207E /* smoothstep.sh */,
+				6506545D2077773A006D207E /* spin.h */,
+				650654902077773A006D207E /* stats_tsd.h */,
+				650654932077773A006D207E /* stats.h */,
+				6506543F2077773A006D207E /* sz.h */,
+				650654832077773A006D207E /* tcache_externs.h */,
+				650654742077773A006D207E /* tcache_inlines.h */,
+				650654752077773A006D207E /* tcache_structs.h */,
+				6506548B2077773A006D207E /* tcache_types.h */,
+				650654732077773A006D207E /* ticker.h */,
+				650654452077773A006D207E /* tsd_generic.h */,
+				650654702077773A006D207E /* tsd_malloc_thread_cleanup.h */,
+				650654952077773A006D207E /* tsd_tls.h */,
+				650654962077773A006D207E /* tsd_types.h */,
+				6506544C2077773A006D207E /* tsd_win.h */,
+				6506544E2077773A006D207E /* tsd.h */,
+				6506547F2077773A006D207E /* util.h */,
+				6506547C2077773A006D207E /* witness.h */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		650654AC2077773A006D207E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				650654AD2077773A006D207E /* background_thread.c */,
+				650654AE2077773A006D207E /* ticker.c */,
+				650654AF2077773A006D207E /* malloc_io.c */,
+				650654B02077773A006D207E /* jemalloc.c */,
+				650654B12077773A006D207E /* jemalloc.sym.o */,
+				650654B22077773A006D207E /* ckh.c */,
+				650654B32077773A006D207E /* witness.c */,
+				650654B42077773A006D207E /* large.c */,
+				650654B52077773A006D207E /* bitmap.c */,
+				650654B62077773A006D207E /* mutex.c */,
+				650654B72077773A006D207E /* base.c */,
+				650654B82077773A006D207E /* prof.c */,
+				650654B92077773A006D207E /* stats.c */,
+				650654BA2077773A006D207E /* hash.c */,
+				650654BB2077773A006D207E /* arena.c */,
+				650654BC2077773A006D207E /* rtree.c */,
+				650654BD2077773A006D207E /* zone.c */,
+				650654BE2077773A006D207E /* tcache.c */,
+				650654BF2077773A006D207E /* sz.c */,
+				650654C02077773A006D207E /* prng.c */,
+				650654C12077773A006D207E /* tsd.c */,
+				650654C22077773A006D207E /* hooks.c */,
+				650654C32077773A006D207E /* pages.c */,
+				650654C42077773A006D207E /* ctl.c */,
+				650654C52077773A006D207E /* spin.c */,
+				650654C62077773A006D207E /* mutex_pool.c */,
+				650654C72077773A006D207E /* nstime.c */,
+				650654C82077773A006D207E /* extent_dss.c */,
+				650654C92077773A006D207E /* extent.c */,
+				650654CA2077773A006D207E /* extent_mmap.c */,
+				650654CB2077773A006D207E /* jemalloc_cpp.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		6506550320777A68006D207E /* jemalloc */ = {
+			isa = PBXGroup;
+			children = (
+				6506550420777A68006D207E /* jemalloc.h */,
+				6506550520777A68006D207E /* Info.plist */,
+			);
+			path = jemalloc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		650654FF20777A68006D207E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6506550620777A68006D207E /* jemalloc.h in Headers */,
+				6506558020777AC9006D207E /* jemalloc_defs.h in Headers */,
+				6506558120777AC9006D207E /* jemalloc_macros.h in Headers */,
+				6506558220777AC9006D207E /* jemalloc_mangle_jet.h in Headers */,
+				6506558320777AC9006D207E /* jemalloc_mangle.h in Headers */,
+				6506558420777AC9006D207E /* jemalloc_protos_jet.h in Headers */,
+				6506558520777AC9006D207E /* jemalloc_protos.h in Headers */,
+				6506558620777AC9006D207E /* jemalloc_rename.h in Headers */,
+				6506558720777AC9006D207E /* jemalloc_typedefs.h in Headers */,
+				6506558820777AC9006D207E /* jemalloc.h in Headers */,
+				6506552D20777AAE006D207E /* arena_externs.h in Headers */,
+				6506552E20777AAE006D207E /* arena_inlines_a.h in Headers */,
+				6506552F20777AAE006D207E /* arena_inlines_b.h in Headers */,
+				6506553020777AAE006D207E /* arena_structs_a.h in Headers */,
+				6506553120777AAE006D207E /* arena_structs_b.h in Headers */,
+				6506553220777AAE006D207E /* arena_types.h in Headers */,
+				6506553320777AAE006D207E /* assert.h in Headers */,
+				6506553420777AAE006D207E /* atomic_c11.h in Headers */,
+				6506553520777AAE006D207E /* atomic_gcc_atomic.h in Headers */,
+				6506553620777AAE006D207E /* atomic_gcc_sync.h in Headers */,
+				6506553720777AAE006D207E /* atomic_msvc.h in Headers */,
+				6506553820777AAE006D207E /* atomic.h in Headers */,
+				6506553920777AAE006D207E /* background_thread_externs.h in Headers */,
+				6506553A20777AAE006D207E /* background_thread_inlines.h in Headers */,
+				6506553B20777AAE006D207E /* background_thread_structs.h in Headers */,
+				6506553C20777AAE006D207E /* base_externs.h in Headers */,
+				6506553D20777AAE006D207E /* base_inlines.h in Headers */,
+				6506553E20777AAE006D207E /* base_structs.h in Headers */,
+				6506553F20777AAE006D207E /* base_types.h in Headers */,
+				6506554020777AAE006D207E /* bit_util.h in Headers */,
+				6506554120777AAE006D207E /* bitmap.h in Headers */,
+				6506554220777AAE006D207E /* ckh.h in Headers */,
+				6506554320777AAE006D207E /* ctl.h in Headers */,
+				6506554420777AAE006D207E /* extent_dss.h in Headers */,
+				6506554520777AAE006D207E /* extent_externs.h in Headers */,
+				6506554620777AAE006D207E /* extent_inlines.h in Headers */,
+				6506554720777AAE006D207E /* extent_mmap.h in Headers */,
+				6506554820777AAE006D207E /* extent_structs.h in Headers */,
+				6506554920777AAE006D207E /* extent_types.h in Headers */,
+				6506554A20777AAE006D207E /* hash.h in Headers */,
+				6506554B20777AAE006D207E /* hooks.h in Headers */,
+				6506554C20777AAE006D207E /* jemalloc_internal_decls.h in Headers */,
+				6506554D20777AAE006D207E /* jemalloc_internal_defs.h in Headers */,
+				6506554E20777AAE006D207E /* jemalloc_internal_defs.h.in in Headers */,
+				6506554F20777AAE006D207E /* jemalloc_internal_externs.h in Headers */,
+				6506555020777AAE006D207E /* jemalloc_internal_includes.h in Headers */,
+				6506555120777AAE006D207E /* jemalloc_internal_inlines_a.h in Headers */,
+				6506555220777AAE006D207E /* jemalloc_internal_inlines_b.h in Headers */,
+				6506555320777AAE006D207E /* jemalloc_internal_inlines_c.h in Headers */,
+				6506555420777AAE006D207E /* jemalloc_internal_macros.h in Headers */,
+				6506555520777AAE006D207E /* jemalloc_internal_types.h in Headers */,
+				6506555620777AAE006D207E /* jemalloc_preamble.h in Headers */,
+				6506555720777AAE006D207E /* jemalloc_preamble.h.in in Headers */,
+				6506555820777AAE006D207E /* large_externs.h in Headers */,
+				6506555920777AAE006D207E /* malloc_io.h in Headers */,
+				6506555A20777AAE006D207E /* mutex_pool.h in Headers */,
+				6506555B20777AAE006D207E /* mutex_prof.h in Headers */,
+				6506555C20777AAE006D207E /* mutex.h in Headers */,
+				6506555D20777AAE006D207E /* nstime.h in Headers */,
+				6506555E20777AAE006D207E /* pages.h in Headers */,
+				6506555F20777AAE006D207E /* ph.h in Headers */,
+				6506556020777AAE006D207E /* prng.h in Headers */,
+				6506556120777AAE006D207E /* prof_externs.h in Headers */,
+				6506556220777AAE006D207E /* prof_inlines_a.h in Headers */,
+				6506556320777AAE006D207E /* prof_inlines_b.h in Headers */,
+				6506556420777AAE006D207E /* prof_structs.h in Headers */,
+				6506556520777AAE006D207E /* prof_types.h in Headers */,
+				6506556620777AAE006D207E /* public_namespace.h in Headers */,
+				6506556720777AAE006D207E /* public_unnamespace.h in Headers */,
+				6506556820777AAE006D207E /* ql.h in Headers */,
+				6506556920777AAE006D207E /* qr.h in Headers */,
+				6506556A20777AAF006D207E /* rb.h in Headers */,
+				6506556B20777AAF006D207E /* rtree_tsd.h in Headers */,
+				6506556C20777AAF006D207E /* rtree.h in Headers */,
+				6506556D20777AAF006D207E /* size_classes.h in Headers */,
+				6506556E20777AAF006D207E /* smoothstep.h in Headers */,
+				6506556F20777AAF006D207E /* spin.h in Headers */,
+				6506557020777AAF006D207E /* stats_tsd.h in Headers */,
+				6506557120777AAF006D207E /* stats.h in Headers */,
+				6506557220777AAF006D207E /* sz.h in Headers */,
+				6506557320777AAF006D207E /* tcache_externs.h in Headers */,
+				6506557420777AAF006D207E /* tcache_inlines.h in Headers */,
+				6506557520777AAF006D207E /* tcache_structs.h in Headers */,
+				6506557620777AAF006D207E /* tcache_types.h in Headers */,
+				6506557720777AAF006D207E /* ticker.h in Headers */,
+				6506557820777AAF006D207E /* tsd_generic.h in Headers */,
+				6506557920777AAF006D207E /* tsd_malloc_thread_cleanup.h in Headers */,
+				6506557A20777AAF006D207E /* tsd_tls.h in Headers */,
+				6506557B20777AAF006D207E /* tsd_types.h in Headers */,
+				6506557C20777AAF006D207E /* tsd_win.h in Headers */,
+				6506557D20777AAF006D207E /* tsd.h in Headers */,
+				6506557E20777AAF006D207E /* util.h in Headers */,
+				6506557F20777AAF006D207E /* witness.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6506541C20777724006D207E /* JemallocDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6506543320777724006D207E /* Build configuration list for PBXNativeTarget "JemallocDemo" */;
+			buildPhases = (
+				6506541920777724006D207E /* Sources */,
+				6506541A20777724006D207E /* Frameworks */,
+				6506541B20777724006D207E /* Resources */,
+				6506550E20777A68006D207E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6506550820777A68006D207E /* PBXTargetDependency */,
+			);
+			name = JemallocDemo;
+			productName = JemallocDemo;
+			productReference = 6506541D20777724006D207E /* JemallocDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6506550120777A68006D207E /* jemalloc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6506550B20777A68006D207E /* Build configuration list for PBXNativeTarget "jemalloc" */;
+			buildPhases = (
+				650654FD20777A68006D207E /* Sources */,
+				650654FE20777A68006D207E /* Frameworks */,
+				650654FF20777A68006D207E /* Headers */,
+				6506550020777A68006D207E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jemalloc;
+			productName = jemalloc;
+			productReference = 6506550220777A68006D207E /* jemalloc.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6506541520777724006D207E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Daniel;
+				TargetAttributes = {
+					6506541C20777724006D207E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					6506550120777A68006D207E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6506541820777724006D207E /* Build configuration list for PBXProject "JemallocDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6506541420777724006D207E;
+			productRefGroup = 6506541E20777724006D207E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6506541C20777724006D207E /* JemallocDemo */,
+				6506550120777A68006D207E /* jemalloc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6506541B20777724006D207E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				650654D02077773A006D207E /* size_classes.sh in Resources */,
+				650654DA2077773A006D207E /* jemalloc_mangle.sh in Resources */,
+				6506542D20777724006D207E /* LaunchScreen.storyboard in Resources */,
+				650654CC2077773A006D207E /* jemalloc_defs.h.in in Resources */,
+				650654D22077773A006D207E /* public_symbols.txt in Resources */,
+				650654D32077773A006D207E /* private_symbols.sh in Resources */,
+				650654CF2077773A006D207E /* private_symbols_jet.awk in Resources */,
+				650654CE2077773A006D207E /* jemalloc_internal_defs.h.in in Resources */,
+				650654D12077773A006D207E /* jemalloc_preamble.h.in in Resources */,
+				650654D42077773A006D207E /* private_namespace.sh in Resources */,
+				650654D62077773A006D207E /* private_symbols.awk in Resources */,
+				6506542A20777724006D207E /* Assets.xcassets in Resources */,
+				6506542820777724006D207E /* Main.storyboard in Resources */,
+				650654DB2077773A006D207E /* jemalloc.sh in Resources */,
+				650654DC2077773A006D207E /* jemalloc_macros.h.in in Resources */,
+				650654D82077773A006D207E /* public_unnamespace.sh in Resources */,
+				650654D52077773A006D207E /* smoothstep.sh in Resources */,
+				650654D72077773A006D207E /* public_namespace.sh in Resources */,
+				650654DD2077773A006D207E /* jemalloc_protos.h.in in Resources */,
+				650654D92077773A006D207E /* jemalloc_rename.sh in Resources */,
+				650654CD2077773A006D207E /* jemalloc_typedefs.h.in in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6506550020777A68006D207E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6506541920777724006D207E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6506542520777724006D207E /* ViewController.m in Sources */,
+				6506543020777724006D207E /* main.m in Sources */,
+				6506542220777724006D207E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		650654FD20777A68006D207E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6506550F20777A85006D207E /* background_thread.c in Sources */,
+				6506551020777A85006D207E /* ticker.c in Sources */,
+				6506551120777A85006D207E /* malloc_io.c in Sources */,
+				6506551220777A85006D207E /* jemalloc.c in Sources */,
+				6506551320777A85006D207E /* ckh.c in Sources */,
+				6506551420777A85006D207E /* witness.c in Sources */,
+				6506551520777A85006D207E /* large.c in Sources */,
+				6506551620777A85006D207E /* bitmap.c in Sources */,
+				6506551720777A85006D207E /* mutex.c in Sources */,
+				6506551820777A85006D207E /* base.c in Sources */,
+				6506551920777A85006D207E /* prof.c in Sources */,
+				6506551A20777A85006D207E /* stats.c in Sources */,
+				6506551B20777A85006D207E /* hash.c in Sources */,
+				6506551C20777A85006D207E /* arena.c in Sources */,
+				6506551D20777A85006D207E /* rtree.c in Sources */,
+				6506551E20777A85006D207E /* zone.c in Sources */,
+				6506551F20777A85006D207E /* tcache.c in Sources */,
+				6506552020777A85006D207E /* sz.c in Sources */,
+				6506552120777A85006D207E /* prng.c in Sources */,
+				6506552220777A85006D207E /* tsd.c in Sources */,
+				6506552320777A85006D207E /* hooks.c in Sources */,
+				6506552420777A85006D207E /* pages.c in Sources */,
+				6506552520777A85006D207E /* ctl.c in Sources */,
+				6506552620777A85006D207E /* spin.c in Sources */,
+				6506552720777A85006D207E /* mutex_pool.c in Sources */,
+				6506552820777A85006D207E /* nstime.c in Sources */,
+				6506552920777A85006D207E /* extent_dss.c in Sources */,
+				6506552A20777A85006D207E /* extent.c in Sources */,
+				6506552B20777A85006D207E /* extent_mmap.c in Sources */,
+				6506552C20777A85006D207E /* jemalloc_cpp.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6506550820777A68006D207E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6506550120777A68006D207E /* jemalloc */;
+			targetProxy = 6506550720777A68006D207E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6506542620777724006D207E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6506542720777724006D207E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6506542B20777724006D207E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6506542C20777724006D207E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6506543120777724006D207E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6506543220777724006D207E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6506543420777724006D207E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = JemallocDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.djs66256.JemallocDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6506543520777724006D207E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = JemallocDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.djs66256.JemallocDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6506550C20777A68006D207E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Zones/jemalloc/include";
+				INFOPLIST_FILE = jemalloc/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.djs66256.jemalloc;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6506550D20777A68006D207E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Zones/jemalloc/include";
+				INFOPLIST_FILE = jemalloc/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.djs66256.jemalloc;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6506541820777724006D207E /* Build configuration list for PBXProject "JemallocDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6506543120777724006D207E /* Debug */,
+				6506543220777724006D207E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6506543320777724006D207E /* Build configuration list for PBXNativeTarget "JemallocDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6506543420777724006D207E /* Debug */,
+				6506543520777724006D207E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6506550B20777A68006D207E /* Build configuration list for PBXNativeTarget "jemalloc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6506550C20777A68006D207E /* Debug */,
+				6506550D20777A68006D207E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6506541520777724006D207E /* Project object */;
+}
