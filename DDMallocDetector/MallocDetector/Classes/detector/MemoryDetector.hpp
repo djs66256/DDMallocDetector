@@ -31,7 +31,7 @@ namespace MD {
         
         static MemoryDetector *GetInstance();
         
-        static constexpr int64_t MAX_DATA_COUNT = 1024 * 10;
+        static constexpr int64_t MAX_DATA_COUNT = 1024 * 1024 * 10;
         
         MemoryDetector() : max_data_count_(MAX_DATA_COUNT) {}
         

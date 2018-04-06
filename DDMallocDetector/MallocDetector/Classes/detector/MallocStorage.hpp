@@ -58,13 +58,18 @@ namespace MD {
         }
         
         void setMainThread() { main_thread_ = true; }
-        void setName(std::string&& name) { name_ = std::move(name); }
-        std::string& name() {
-            if (name_.size() == 0) {
+        void setName(char *name) {
+            VMAllocator<char> allocator;
+            name_ =  allocator.allocate(strlen(name) + 1);
+            strcpy(name_, name);
+        }
+        std::string name() {
+            std::string name;
+            if (strlen(name_) == 0) {
                 if (main_thread_) {
                     std::strstream s;
                     s << "Main(" << pid_ << ")";
-                    s >> name_;
+                    s >> name;
                 }
                 else {
                     char buf[128] = {0};
@@ -72,16 +77,16 @@ namespace MD {
                     if (rc == 0 && strlen(buf) > 0) {
                         VMAllocator<char> allocator;
                         std::string thread_name(buf, allocator);
-                        name_ = std::move(thread_name);
+                        name = std::move(thread_name);
                     }
                     else {
                         std::strstream s;
                         s << "pid(" << pid_ << ")";
-                        s >> name_;
+                        s >> name;
                     }
                 }
             }
-            return name_;
+            return name;
         }
         
         void clear() {
@@ -90,13 +95,17 @@ namespace MD {
         }
         
         ~Storage() {
-            
+            if (name_) {
+                VMAllocator<char> allocator;
+                allocator.deallocate(name_, strlen(name_) + 1);
+                name_ = NULL;
+            }
         }
         
     private:
         pthread_t pid_;
         bool main_thread_;
-        std::string name_;
+        char *name_;
         std::mutex lock_;
         std::vector<_Tp, _Allocator> store_;
         std::chrono::time_point<std::chrono::system_clock> start_time_;

@@ -38,10 +38,12 @@ namespace MD {
             MemoryDetector::GetInstance()->pool().Detatch(s);
         }
         
-        __attribute__((constructor))
-        void make_storage_key() {
-            pthread_key_create(&key_, deallocate);
-        }
+        struct InitKey {
+            InitKey() {
+                pthread_key_create(&key_, deallocate);
+            }
+        };
+        static class InitKey initKey_;
         
         struct Constructor {
             MemoryStorage* operator()() {
@@ -54,9 +56,7 @@ namespace MD {
                 
                 char buf[128] = {0};
                 pthread_getname_np(pid, buf, sizeof(buf));
-                VMAllocator<char> allocator;
-                std::string thread_name(buf, allocator);
-                p->setName(std::move(thread_name));
+                p->setName(buf);
                 
                 MemoryDetector::GetInstance()->pool().Attach(p);
                 return p;

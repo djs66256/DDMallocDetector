@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6506559220777C34006D207E /* MallocDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506559020777C34006D207E /* MallocDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6506559520777C34006D207E /* MallocDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6506558E20777C34006D207E /* MallocDetector.framework */; };
 		6506559620777C34006D207E /* MallocDetector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6506558E20777C34006D207E /* MallocDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6506559B20777C4A006D207E /* AnalysisPerThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65064CF4206F76B3006D207E /* AnalysisPerThread.cpp */; };
@@ -35,7 +34,7 @@
 		650655B120777C57006D207E /* MDBySizeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D102071496D006D207E /* MDBySizeView.mm */; };
 		650655B220777C57006D207E /* MDByTimeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65064D2020727743006D207E /* MDByTimeView.mm */; };
 		650655B320777C62006D207E /* MDByTimeGenerateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65064D1D207276F3006D207E /* MDByTimeGenerateTableViewController.m */; };
-		650655B420777C62006D207E /* MDAnalysisGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.m */; };
+		650655B420777C62006D207E /* MDAnalysisGroupTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.mm */; };
 		650655B520777C62006D207E /* MDInspectorIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 65064CDC206E9C9C006D207E /* MDInspectorIcon.m */; };
 		650655B620777C74006D207E /* AnalysisPerThread.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 65064CF5206F76B3006D207E /* AnalysisPerThread.hpp */; };
 		650655B720777C74006D207E /* AnalysisByTime.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 65064D2320728321006D207E /* AnalysisByTime.hpp */; };
@@ -46,7 +45,7 @@
 		650655BC20777C74006D207E /* Macros.h in Headers */ = {isa = PBXBuildFile; fileRef = BE8C5869206E6D4800D81AE6 /* Macros.h */; };
 		650655BD20777C74006D207E /* Allocator.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE8C585A206E6D4800D81AE6 /* Allocator.hpp */; };
 		650655BE20777C74006D207E /* ThreadLocal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE8C5879206E6D4800D81AE6 /* ThreadLocal.hpp */; };
-		650655BF20777C74006D207E /* MallocDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 65064CEC206EA802006D207E /* MallocDetector.h */; };
+		650655BF20777C74006D207E /* MallocDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 65064CEC206EA802006D207E /* MallocDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		650655C020777C74006D207E /* MallocWrapZone.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE8C5873206E6D4800D81AE6 /* MallocWrapZone.hpp */; };
 		650655C120777C74006D207E /* MemoryDetector.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE8C5877206E6D4800D81AE6 /* MemoryDetector.hpp */; };
 		650655C220777C74006D207E /* MallocPool.hpp in Headers */ = {isa = PBXBuildFile; fileRef = BE8C5870206E6D4800D81AE6 /* MallocPool.hpp */; };
@@ -158,7 +157,7 @@
 		BE73E4B82071EDB400F28718 /* MDBySizeGroupTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBySizeGroupTableViewController.h; sourceTree = "<group>"; };
 		BE73E4B92071EDB400F28718 /* MDBySizeGroupTableViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDBySizeGroupTableViewController.mm; sourceTree = "<group>"; };
 		BE73E4BB2071F02800F28718 /* MDAnalysisGroupTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAnalysisGroupTableViewController.h; sourceTree = "<group>"; };
-		BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAnalysisGroupTableViewController.m; sourceTree = "<group>"; };
+		BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MDAnalysisGroupTableViewController.mm; sourceTree = "<group>"; };
 		BE761A732070B2CA001C8249 /* Normalize.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Normalize.hpp; sourceTree = "<group>"; };
 		BE7F01DE207208CD009C46E9 /* AxisAnchors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AxisAnchors.hpp; sourceTree = "<group>"; };
 		BE8C5840206E6D1500D81AE6 /* DDMallocDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDMallocDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,7 +299,7 @@
 				65064D06207122C6006D207E /* MDControlViewController.h */,
 				65064D03207122C6006D207E /* MDControlViewController.mm */,
 				BE73E4BB2071F02800F28718 /* MDAnalysisGroupTableViewController.h */,
-				BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.m */,
+				BE73E4BC2071F02800F28718 /* MDAnalysisGroupTableViewController.mm */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -439,11 +438,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6506559220777C34006D207E /* MallocDetector.h in Headers */,
+				650655BF20777C74006D207E /* MallocDetector.h in Headers */,
 				650655B620777C74006D207E /* AnalysisPerThread.hpp in Headers */,
 				650655B720777C74006D207E /* AnalysisByTime.hpp in Headers */,
 				650655B820777C74006D207E /* AnalysisBySize.hpp in Headers */,
-				650655BF20777C74006D207E /* MallocDetector.h in Headers */,
 				650655B920777C74006D207E /* AnalysisTask.hpp in Headers */,
 				650655BA20777C74006D207E /* AnalysisHelper.h in Headers */,
 				650655BB20777C74006D207E /* Normalize.hpp in Headers */,
@@ -592,7 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				650655B320777C62006D207E /* MDByTimeGenerateTableViewController.m in Sources */,
-				650655B420777C62006D207E /* MDAnalysisGroupTableViewController.m in Sources */,
+				650655B420777C62006D207E /* MDAnalysisGroupTableViewController.mm in Sources */,
 				650655B520777C62006D207E /* MDInspectorIcon.m in Sources */,
 				650655A220777C57006D207E /* MallocDetector.mm in Sources */,
 				650655A320777C57006D207E /* AxisLayer.mm in Sources */,
