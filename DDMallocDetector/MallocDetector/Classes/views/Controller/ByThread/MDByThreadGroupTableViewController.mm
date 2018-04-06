@@ -99,6 +99,7 @@
             break;
         case 1:{
             MDByThreadGraphViewController *vc = [MDByThreadGraphViewController new];
+            vc.title = [NSString stringWithFormat:@"%s", _data->thread_memory().at(indexPath.row).name.c_str()];
             [vc setData:_data->thread_memory()[indexPath.row].memory];
             [self.navigationController pushViewController:vc animated:YES];
         }

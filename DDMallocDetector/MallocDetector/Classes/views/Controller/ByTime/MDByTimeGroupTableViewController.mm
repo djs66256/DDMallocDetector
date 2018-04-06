@@ -102,12 +102,14 @@
             break;
         case 1: {
             MDByTimeGraphViewController *vc = [MDByTimeGraphViewController new];
+            vc.title = @"全部线程";
             [vc setData:_all_list];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 2: {
             MDByTimeGraphViewController *vc = [MDByTimeGraphViewController new];
+            vc.title = [NSString stringWithFormat:@"%s", _data->at(indexPath.row).name.c_str()];
             [vc setData:_data->at(indexPath.row).list];
             [self.navigationController pushViewController:vc animated:YES];
         }

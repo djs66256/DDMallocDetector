@@ -101,11 +101,13 @@
     }
     else if (indexPath.section == 1) {
         MDBySizeGraphViewController *vc = [MDBySizeGraphViewController new];
+        vc.title = @"全部";
         [vc setData:_allData];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.section == 2) {
         MDBySizeGraphViewController *vc = [MDBySizeGraphViewController new];
+        vc.title = [NSString stringWithFormat:@"%s", _data->at(indexPath.row).name.c_str()];
         [vc setData:_data->at(indexPath.row).list];
         [self.navigationController pushViewController:vc animated:YES];
     }
