@@ -11,9 +11,6 @@
 #import "MallocDetector.h"
 
 int main(int argc, char * argv[]) {
-    malloc_detector_show_inspector();
-    malloc_detector_attach_zone(YES);
-    malloc_detector_start();
     
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
