@@ -33,7 +33,7 @@ namespace MD {
         
         static constexpr int64_t MAX_DATA_COUNT = 1024 * 1024 * 10;
         
-        MemoryDetector() : max_data_count_(MAX_DATA_COUNT) {}
+        MemoryDetector();
         
         // Editting malloc_zones is not thread safe, must done at program start!
         void DetectorAllZones() noexcept;
@@ -51,6 +51,16 @@ namespace MD {
             return wrap_zones_;
         }
         
+        void AddSyscallCount() {
+            if (isEnabled()) {
+                syscall_count_.fetch_add(1, std::memory_order_relaxed);
+            }
+        }
+        
+        int64_t syscall_count() {
+            return syscall_count_.load();
+        }
+        
         void ClearPool() {
             if (!Running()) {
                 pool_.ClearAll();
@@ -58,6 +68,7 @@ namespace MD {
             else {
                 throw ProtectException();
             }
+            syscall_count_.store(0);
         }
         
         bool isEnabled() noexcept {
@@ -107,6 +118,7 @@ namespace MD {
         
     private:
         std::atomic<bool> enable_;
+        std::atomic<int64_t> syscall_count_;
         int64_t max_data_count_;
         std::mutex lock_;
         MallocPool pool_;

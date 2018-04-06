@@ -29,6 +29,7 @@ namespace MD {
         struct ThreadInfo {
             list_type_ptr list;
             std::string name;
+            std::int64_t min_size = 0, max_size = 0;
             
         private:
             friend class AnalysisBySize;
@@ -77,6 +78,8 @@ namespace MD {
             threadInfo.list = MakeEmptyList();
             std::for_each(s->data().begin(), s->data().end(), [&](auto& mem) {
                 threadInfo.count(mem.size);
+                threadInfo.min_size = std::min(threadInfo.min_size, mem.size);
+                threadInfo.max_size = std::max(threadInfo.max_size, mem.size);
             });
             thread_info_list_->emplace_back(std::move(threadInfo));
         };

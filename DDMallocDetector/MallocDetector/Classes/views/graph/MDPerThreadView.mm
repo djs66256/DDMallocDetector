@@ -70,6 +70,8 @@ typedef MD::PairStrokeLayer<time_t, std::size_t> TimeSizeLayer;
     
     auto cvs = [self canvas];
     cvs->AddLayer(_lineLayer);
+    cvs->AddLayer(_xAxis);
+    cvs->AddLayer(_yAxis);
 }
 
 @end

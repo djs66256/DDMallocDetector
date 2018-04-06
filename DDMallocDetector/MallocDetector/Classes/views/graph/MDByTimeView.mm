@@ -100,6 +100,8 @@ typedef MD::YAxisLayer<MD::LinearAnchors<double>> YAxisLayerType;
     
     auto cvs = [self canvas];
     cvs->AddLayer(_strokeLayer);
+    cvs->AddLayer(_xAxis);
+    cvs->AddLayer(_yAxis);
 }
 
 @end

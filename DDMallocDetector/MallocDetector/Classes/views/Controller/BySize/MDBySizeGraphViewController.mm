@@ -35,7 +35,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)setData:(MDBySizeGraphViewControllerData)data {
     _data = data;
     

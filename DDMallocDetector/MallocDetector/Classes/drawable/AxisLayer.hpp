@@ -84,7 +84,7 @@ namespace MD {
         void Draw() override;
     };
     
-    static UIColor* UIColorFrom(Color& c) {
+    inline UIColor* UIColorFrom(Color& c) {
         return [UIColor colorWithRed:c.red() green:c.green() blue:c.blue() alpha:c.alpha()];
     }
     

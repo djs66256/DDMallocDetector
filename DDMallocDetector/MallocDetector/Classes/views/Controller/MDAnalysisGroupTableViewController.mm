@@ -44,11 +44,14 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
+        return 1;
+    }
+    else if (section == 1) {
         return 1;
     }
     else {
@@ -61,6 +64,9 @@
     
     if (indexPath.section == 0) {
         cell.textLabel.text = @"restart";
+    }
+    else if (indexPath.section == 1) {
+        cell.textLabel.text = [NSString stringWithFormat:@"syscall: %zd", MD::MemoryDetector::GetInstance()->syscall_count()];
     }
     else {
         cell.textLabel.text = self.data[indexPath.row][@"title"];
@@ -76,6 +82,8 @@
             MD::MemoryDetector::GetInstance()->ClearPool();
             MD::MemoryDetector::GetInstance()->Start();
         });
+    }
+    else if (indexPath.section == 1) {
     }
     else {
         Class cls = self.data[indexPath.row][@"class"];
